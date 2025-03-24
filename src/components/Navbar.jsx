@@ -2,27 +2,39 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
+import Admin from './pages/Admin'
 import "./Navbar.css";
 
 export default function Navbar() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
 
   const openLoginModal = (event) => {
     event.preventDefault();
     setIsLoginOpen(true);
     setIsSignUpOpen(false);
+    setIsAdminOpen(false);
   };
 
   const openSignUpModal = (event) => {
     event.preventDefault();
     setIsSignUpOpen(true);
     setIsLoginOpen(false);
+    setIsAdminOpen(false);
+  };
+
+  const openAdminModal = (event) => {
+    event.preventDefault();
+    setIsLoginOpen(false);
+    setIsSignUpOpen(false);
+    setIsAdminOpen(true);
   };
 
   const closeModals = () => {
     setIsLoginOpen(false);
     setIsSignUpOpen(false);
+    setIsAdminOpen(false);
   };
 
   return (
@@ -41,7 +53,7 @@ export default function Navbar() {
           <li><Link to="/features">Features</Link></li>
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/security">Security</Link></li>
-          <li><Link to="/admin">Admin</Link></li>
+          <li><a href="#" onClick={openAdminModal}>Admin</a></li>
         </ul>
       </nav>
 
@@ -55,6 +67,7 @@ export default function Navbar() {
       {/* Render Modals */}
       {isLoginOpen && <Login closeModal={closeModals} openSignUp={openSignUpModal} />}
       {isSignUpOpen && <SignUp closeModal={closeModals} openLogin={openLoginModal} />}
+      {isAdminOpen && <Admin closeModal={closeModals} />}
     </header>
   );
 }
