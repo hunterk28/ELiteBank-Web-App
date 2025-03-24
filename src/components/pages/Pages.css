@@ -1,0 +1,235 @@
+body{
+    font-family: 'Inter',sans-serif;
+}
+
+.main-home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between text & image */
+    padding: 50px 100px;
+    height: 80vh;
+    background-image: url("../src/images/backgroundMainImage.png");
+}
+
+.tagline {
+    flex: 1;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+}
+
+/* Feature Section Below */
+
+.features-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #5E191A;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #FAF3E0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: #F5E1C8;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #5E191A;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+
+/* Features End */
+
+
+/* About us section below */
+.about-us {
+    padding: 50px;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #5E191A;
+}
+
+.about-description {
+    font-size: 18px;
+    color: #555;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.about-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    background: #FAF3E0; 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.2);
+    background: #F5E1C8;
+}
+
+.about-card h3 {
+    font-size: 20px;
+    color: #5E191A;
+    font-weight: 700;
+}
+
+.about-card p {
+    font-size: 16px;
+    color: #444; 
+    font-weight: 500;
+}
+/* About Us Ended over here */
+
+
+/* Security Section Starts from here */
+.security-page {
+    padding: 50px;
+    text-align: center;
+}
+
+.security-hero {
+    background-color: #5E191A;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.security-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.security-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.security-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.security-feature {
+    background: #FAF3E0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.security-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: #F5E1C8;
+}
+
+.security-feature h3 {
+    font-size: 20px;
+    color: #5E191A;
+    font-weight: 700;
+}
+
+.security-feature p {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+}
+
+.security-faq {
+    margin-top: 50px;
+}
+
+.faq-item {
+    background: #FAF3E0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    background: #F5E1C8;
+}
+
+.faq-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5E191A;
+}
+
+.faq-item p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
+ /* Security Section ends here */
+
+
+
