@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { useNavigate } from "react-router-dom";
 import { FaTachometerAlt, FaExchangeAlt, FaCogs, FaUsers, FaFileAlt, FaLock, FaSignOutAlt, FaChartBar, FaMoneyCheckAlt, FaCalculator } from "react-icons/fa";
 import "./AdminDash.css";
+import DashboardContent from './pages/DashBoard'
 
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     const handleLogout = () => {
-        navigate("/"); // Redirect to the home page
+        navigate("/");
     };
 
     return (
@@ -19,7 +20,7 @@ export default function AdminDashboard() {
                     <img src="/bankLogo.png" alt="Elite Bank" />
                     <h2><span className="elite">ELITE</span> BANK</h2>
                 </div>
-                <nav>
+                <nav className="adminNav">
                     <ul>
                         <li className={activeTab === "Dashboard" ? "active" : ""} onClick={() => setActiveTab("Dashboard")}>
                             <FaTachometerAlt /> Dashboard
@@ -57,19 +58,15 @@ export default function AdminDashboard() {
 
             {/* Main Content */}
             <main className="dashboard-content">
-                <h1>Welcome Admin</h1>
-                <p>Currently Viewing: <strong>{activeTab}</strong></p>
-                <div className="content-box">
-                    {activeTab === "Dashboard" && <p>Overview of bank activities and statistics.</p>}
-                    {activeTab === "Transactions" && <p>Process deposits, withdrawals, and fund transfers.</p>}
-                    {activeTab === "System Settings" && <p>Modify bank settings and security configurations.</p>}
-                    {activeTab === "User Management" && <p>Manage customer accounts and staff roles.</p>}
-                    {activeTab === "Audit Logs" && <p>View logs of all actions performed in the system.</p>}
-                    {activeTab === "Account Controls" && <p>Approve or suspend accounts based on rules.</p>}
-                    {activeTab === "Loans" && <p>Manage loan applications and repayment tracking.</p>}
-                    {activeTab === "Interest & Fees" && <p>Calculate interest on loans and deposits.</p>}
-                    {activeTab === "Reports & Statements" && <p>Generate financial statements and reports.</p>}
-                </div>
+                {activeTab === "Dashboard" && <DashboardContent />} 
+                {activeTab === "Transactions" && <p>Process deposits, withdrawals, and fund transfers.</p>}
+                {activeTab === "System Settings" && <p>Modify bank settings and security configurations.</p>}
+                {activeTab === "User Management" && <p>Manage customer accounts and staff roles.</p>}
+                {activeTab === "Audit Logs" && <p>View logs of all actions performed in the system.</p>}
+                {activeTab === "Account Controls" && <p>Approve or suspend accounts based on rules.</p>}
+                {activeTab === "Loans" && <p>Manage loan applications and repayment tracking.</p>}
+                {activeTab === "Interest & Fees" && <p>Calculate interest on loans and deposits.</p>}
+                {activeTab === "Reports & Statements" && <p>Generate financial statements and reports.</p>}
             </main>
         </div>
     );
