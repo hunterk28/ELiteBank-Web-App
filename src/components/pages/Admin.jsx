@@ -1,9 +1,19 @@
+import { useNavigate } from "react-router-dom"; 
 import "./Pages.css";
 
 export default function Login({ closeModal }) {
+
+    const navigate = useNavigate();
+
+    function handleSubmit () {
+        closeModal();
+        navigate("/admin-dashboard");
+    }
+
+
     return (
         <div className="modal-overlay" onClick={closeModal}>
-            <form className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <form action={handleSubmit} className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2>Admin Login</h2>
                 <div className="input-field">
                     <label>Username</label>

@@ -1,0 +1,114 @@
+/* Admin Dashboard Styles */
+
+body{
+    font-family: 'Inter',sans-serif;
+}
+
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+    background-color: black
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #111; /* Dark theme */
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    text-align: center;
+    padding-bottom: 20px;
+    gap: 20px;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    background-color: white; /* White background for the logo */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.logo h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.elite {
+    color: #5E191A;
+    font-weight: 700;
+}
+
+/* Navigation Menu */
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li:hover,
+nav ul li.active {
+    background-color: red; /* Active tab color */
+}
+
+nav ul li svg {
+    margin-right: 10px;
+}
+
+/* Fixing Bottom Spacing Issue */
+.logout {
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+.logout:hover {
+    background-color: red;
+}
+
+.logout svg {
+    margin-right: 10px;
+}
+
+/* Main Content Area */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    color: white;
+}
+
+.content-box {
+    background: beige;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+

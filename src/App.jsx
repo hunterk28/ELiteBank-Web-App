@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/Aboutus";
@@ -7,12 +7,15 @@ import Security from "./components/pages/Security";
 import SignUp from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import Admin from "./components/pages/Admin";
+import AdminDashboard from "./components/adminDashboard/AdminDashboard";
 
+function AppWrapper() {
+  const location = useLocation();
+  const hideNavbarRoutes = ["/admin-dashboard"];
 
-function App() {
   return (
-    <Router>
-      <Navbar />
+    <>
+      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
@@ -21,7 +24,16 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppWrapper />
     </Router>
   );
 }
