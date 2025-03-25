@@ -3,7 +3,7 @@ import "./Pages.css";
 export default function Login({ closeModal }) {
     return (
         <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <form className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2>Admin Login</h2>
                 <div className="input-field">
                     <label>Username</label>
@@ -14,7 +14,7 @@ export default function Login({ closeModal }) {
                     <input type="password" />
                 </div>
                 <button className="login-submit">Login</button>
-            </div>
+            </form>
         </div>
     );
 }

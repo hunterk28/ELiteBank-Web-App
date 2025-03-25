@@ -3,7 +3,7 @@ import "./Pages.css";
 export default function SignUp({ closeModal, openLogin }) {
     return (
         <div className="signup-modal-overlay" onClick={closeModal}>
-            <div className="signup-modal-content" onClick={(e) => e.stopPropagation()}>
+            <form className="signup-modal-content" onClick={(e) => e.stopPropagation()}>
                 <button className="signup-close-btn" onClick={closeModal}>&times;</button>
                 <h2 className="signup-heading">Sign Up</h2>
                 <p className="page-subtitle">Please enter your details</p>
@@ -49,7 +49,7 @@ export default function SignUp({ closeModal, openLogin }) {
                         Already have an account? <span className="signup-link" onClick={openLogin}>Log in</span>
                     </p>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
