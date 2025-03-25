@@ -1,0 +1,16 @@
+.main-home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between text & image */
+    padding: 50px 100px;
+    height: 80vh;
+    background-image: url("../src/images/backgroundMainImage.png");
+}
+
+.tagline {
+    flex: 1; /* Takes half the space */
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+}
