@@ -1,7 +1,30 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Login from "./pages/Login";
+import SignUp from "./pages/Signup";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
+  const openLoginModal = (event) => {
+    event.preventDefault();
+    setIsLoginOpen(true);
+    setIsSignUpOpen(false);
+  };
+
+  const openSignUpModal = (event) => {
+    event.preventDefault();
+    setIsSignUpOpen(true);
+    setIsLoginOpen(false);
+  };
+
+  const closeModals = () => {
+    setIsLoginOpen(false);
+    setIsSignUpOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="logo-container">
@@ -24,10 +47,14 @@ export default function Navbar() {
 
       <div className="auth-container">
         <ul className="second-list">
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
+          <li><a href="#" onClick={openLoginModal}>Login</a></li>
+          <li><a href="#" onClick={openSignUpModal}>Sign Up</a></li>
         </ul>
       </div>
+
+      {/* Render Modals */}
+      {isLoginOpen && <Login closeModal={closeModals} openSignUp={openSignUpModal} />}
+      {isSignUpOpen && <SignUp closeModal={closeModals} openLogin={openLoginModal} />}
     </header>
   );
 }

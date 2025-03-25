@@ -232,4 +232,318 @@ body{
  /* Security Section ends here */
 
 
+ /* Login Page Starts from here */
+/* Main container */
+.login-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Modal Overlay - Enhanced */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Slight transparency */
+    backdrop-filter: blur(5px); /* Blurs the background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: backdrop-filter 0.3s ease-in-out;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* Title */
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5E191A;
+    margin-bottom: 15px;
+}
+
+/* Input fields */
+.input-field {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Login Submit Button */
+.login-submit {
+    background-color: #5E191A;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Disabled Button Hover Effect */
+.login-submit:hover {
+    opacity: 0.9;
+}
+
+/* Sign Up Text */
+.signup-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.signup-link {
+    color: #5E191A;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 22px;
+    }
+
+    .input-field input {
+        font-size: 14px;
+    }
+
+    .login-submit {
+        font-size: 14px;
+    }
+}
+
+/* Login page ends here */
+
+/* SignUp Starts from here */
+
+/* SignUp Modal */
+.signup-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: backdrop-filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.signup-modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 600px; /* Increased width for better layout */
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out, slideIn 0.3s ease-in-out;
+    max-height: 80vh; /* Restrict height */
+    overflow-y: auto; /* Enable scrolling inside modal */
+}
+
+/* Close Button */
+.signup-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #5E191A;
+    font-weight: bold;
+}
+
+.signup-close-btn:hover {
+    color: #ff4d4d;
+}
+
+/* Input Fields */
+.signup-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 20px;
+}
+
+.signup-heading{
+    font-size: 24px;
+    font-weight: bold;
+    color: #5E191A !important;
+    margin-bottom: 15px;
+}
+
+.signup-input-field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.signup-input-field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.signup-input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    background: #f9f9f9;
+}
+
+/* Full-width fields */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Buttons */
+.signup-submit {
+    background-color: #5E191A;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    grid-column: span 2; /* Ensure button is full width */
+}
+
+.signup-submit:hover {
+    opacity: 0.9;
+}
+
+/* Sign Up & Login Links */
+.signup-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+    grid-column: span 2; /* Make text span full width */
+}
+
+.signup-link {
+    color: #5E191A;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-10px); }
+    to { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .signup-modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .signup-form {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .signup-modal-content h2 {
+        font-size: 22px;
+    }
+
+    .signup-input-field input {
+        font-size: 14px;
+    }
+
+    .signup-submit {
+        font-size: 14px;
+    }
+}
+
+
+/* SignUp Ends here */
+
 
