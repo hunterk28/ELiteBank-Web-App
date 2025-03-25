@@ -1,9 +1,20 @@
-import './Pages.css'
+import "./Pages.css";
 
-export default function Admin() {
+export default function Login({ closeModal }) {
     return (
-        <>
-            <h1>Admin</h1>
-        </>
-    )
+        <div className="modal-overlay" onClick={closeModal}>
+            <form className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <h2>Admin Login</h2>
+                <div className="input-field">
+                    <label>Username</label>
+                    <input type="text" />
+                </div>
+                <div className="input-field">
+                    <label>Password</label>
+                    <input type="password" />
+                </div>
+                <button className="login-submit">Login</button>
+            </form>
+        </div>
+    );
 }
