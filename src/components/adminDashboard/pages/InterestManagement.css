@@ -1,0 +1,278 @@
+/* Base Styles */
+.interest-management {
+    padding: 1rem;
+    background: #121212;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: auto;
+  }
+  
+  /* Header Animations */
+  .interest-header {
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .interest-header h1 {
+    color: #d44a4a;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .interest-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #d44a4a;
+    transform-origin: left;
+    animation: underlineGrow 0.8s 0.3s ease-out forwards;
+  }
+  
+  @keyframes underlineGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  
+  /* Search Bar Animation */
+  .search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: slideUp 0.5s 0.2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .search-bar:hover {
+    box-shadow: 0 0 0 2px rgba(94, 25, 26, 0.2);
+  }
+  
+  /* Tab Animations */
+  .interest-tabs {
+    display: flex;
+    border-bottom: 1px solid #2a2a2a;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.5s 0.4s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .tab-button {
+    padding: 0.7rem 1.2rem;
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #d44a4a;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .tab-button.active {
+    color: #ffffff;
+  }
+  
+  .tab-button.active::after {
+    width: 100%;
+  }
+  
+  .tab-button:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+  
+  /* Table Animations */
+  .rates-table-container {
+    background: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.6s 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .rates-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  
+  .rates-table th {
+    text-align: left;
+    padding: 1rem;
+    background: #2a2a2a;
+    color: #d44a4a;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  
+  .rates-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rates-table tr {
+    animation: rowEntry 0.5s ease-out forwards;
+    animation-delay: calc(var(--row-index) * 0.05s);
+    opacity: 0;
+  }
+  
+  @keyframes rowEntry {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+  }
+  
+  .rates-table tr:hover td {
+    background-color: rgba(94, 25, 26, 0.1);
+  }
+  
+  /* Input Field Animations */
+  input {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    color: #e0e0e0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    width: 80px;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #d44a4a;
+    box-shadow: 0 0 0 2px rgba(94, 25, 26, 0.3);
+    transform: scale(1.02);
+  }
+  
+  /* Button Animations */
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .edit-btn, .save-btn {
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .edit-btn {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+  }
+  
+  .save-btn {
+    background: rgba(25, 135, 84, 0.1);
+    color: #198754;
+  }
+  
+  .edit-btn:hover {
+    background: rgba(13, 110, 253, 0.2);
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  .save-btn:hover {
+    background: rgba(25, 135, 84, 0.2);
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  /* Add New Button Animation */
+  .add-new-section {
+    text-align: center;
+    margin-top: 1.5rem;
+    animation: fadeIn 0.6s 0.7s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .add-btn {
+    background: rgba(94, 25, 26, 0.1);
+    color: #d44a4a;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .add-btn:hover {
+    background: rgba(94, 25, 26, 0.2);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .interest-tabs {
+      flex-wrap: wrap;
+    }
+    
+    .tab-button {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.85rem;
+    }
+    
+    .rates-table th, 
+    .rates-table td {
+      padding: 0.8rem;
+      font-size: 0.85rem;
+    }
+    
+    .actions {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .edit-btn, .save-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+    }
+  }
