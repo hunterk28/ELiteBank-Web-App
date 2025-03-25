@@ -1,0 +1,349 @@
+/* LoanManagement.css */
+.loan-management {
+    padding: 1rem;
+    background: #121212;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: auto;
+  }
+  
+  .loan-header {
+    margin-bottom: 1rem;
+  }
+  
+  .loan-header h1 {
+    color: #d44a4a;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    position: relative;
+  }
+  
+  .loan-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #d44a4a;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid #2a2a2a;
+  }
+  
+  .search-bar input {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    width: 100%;
+    margin-left: 0.5rem;
+  }
+  
+  .search-bar input:focus {
+    outline: none;
+  }
+  
+  .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .filter-dropdown {
+    display: flex;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid #2a2a2a;
+  }
+  
+  .filter-dropdown select {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    margin-left: 0.5rem;
+  }
+  
+  .loan-tabs {
+    display: flex;
+    border-bottom: 1px solid #2a2a2a;
+    margin-bottom: 1rem;
+  }
+  
+  .tab-button {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .tab-button.active {
+    color: #d44a4a;
+    font-weight: 600;
+  }
+  
+  .tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #d44a4a;
+  }
+  
+  .loan-table-container {
+    background: #1e1e1e;
+    border-radius: 6px;
+    border: 1px solid #2a2a2a;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .loan-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  
+  .loan-table th {
+    text-align: left;
+    padding: 0.8rem;
+    background: #2a2a2a;
+    color: #d44a4a;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  
+  .loan-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  
+  .loan-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .loan-table tr:hover td {
+    background-color: rgba(94, 25, 26, 0.1);
+  }
+  
+  .loan-table tr.selected td {
+    background-color: rgba(94, 25, 26, 0.2);
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .status-badge.pending {
+    background: rgba(246, 194, 62, 0.1);
+    color: #f6c23e;
+  }
+  
+  .status-badge.approved {
+    background: rgba(25, 135, 84, 0.1);
+    color: #198754;
+  }
+  
+  .status-badge.active {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+  }
+  
+  .status-badge.overdue {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .actions button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .actions button:hover {
+    transform: translateY(-1px);
+  }
+  
+  .approve-btn {
+    background: rgba(25, 135, 84, 0.1);
+    color: #198754;
+  }
+  
+  .reject-btn {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
+  
+  .payment-btn {
+    background: rgba(25, 135, 84, 0.1);
+    color: #198754;
+  }
+  
+  .edit-btn {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+  }
+  
+  .loan-detail-panel {
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 1rem;
+    border: 1px solid #2a2a2a;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  
+  .panel-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #d44a4a;
+  }
+  
+  .loan-id {
+    font-size: 0.9rem;
+    background: rgba(94, 25, 26, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+  }
+  
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .detail-item label {
+    display: block;
+    color: #a0a0a0;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .detail-item p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .panel-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #2a2a2a;
+  }
+  
+  .panel-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .panel-actions button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .add-policy {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .add-btn {
+    background: rgba(94, 25, 26, 0.1);
+    color: #d44a4a;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .add-btn:hover {
+    background: rgba(94, 25, 26, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .controls {
+      flex-direction: column;
+    }
+    
+    .loan-table th, 
+    .loan-table td {
+      padding: 0.6rem;
+    }
+    
+    .actions {
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    
+    .detail-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .panel-actions {
+      flex-direction: column;
+    }
+  }

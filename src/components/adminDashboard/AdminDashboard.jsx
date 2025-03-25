@@ -6,6 +6,7 @@ import DashboardContent from './pages/DashBoard';
 import Transaction from './pages/Transaction';
 import CostumerManagement from './pages/CostumerManagement';
 import AccountManagement from './pages/AccountManagement';
+import LoanManagement from './pages/LoanManagement';
 
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");
@@ -59,7 +60,7 @@ export default function AdminDashboard() {
                 {activeTab === "Transactions" && <Transaction />}
                 {activeTab === "User Management" && <CostumerManagement />}
                 {activeTab === "Account Controls" && <AccountManagement />}
-                {activeTab === "Loans" && <p>Manage loan applications and repayment tracking.</p>}
+                {activeTab === "Loans" && <LoanManagement />}
                 {activeTab === "Interest & Fees" && <p>Calculate interest on loans and deposits.</p>}
                 {activeTab === "Reports & Statements" && <p>Generate financial statements and reports.</p>}
             </main>
