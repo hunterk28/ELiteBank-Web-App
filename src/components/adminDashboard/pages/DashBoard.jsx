@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDollarSign, FaChartLine, FaUsers, FaExchangeAlt, FaCreditCard, FaFileInvoiceDollar, FaShieldAlt } from "react-icons/fa";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import './AdminPages.css';
+import './DashBoard.css';
 
 const balanceData = [
   { date: "16/08", balance: 15000 },
@@ -23,7 +23,7 @@ const transactionData = [
   { name: 'Jul', deposits: 3490, withdrawals: 4300 },
 ];
 
-const DashboardOverview = () => {
+export default function DashboardOverview () {
   return (
     <div className="bank-admin-dashboard">
       {/* Header Section */}
@@ -304,5 +304,3 @@ const DashboardOverview = () => {
     </div>
   );
 };
-
-export default DashboardOverview;

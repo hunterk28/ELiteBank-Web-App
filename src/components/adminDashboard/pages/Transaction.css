@@ -1,0 +1,283 @@
+/* Transaction.css - Enhanced with Animations */
+.transaction-management {
+    padding: 1rem;
+    background: #121212;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    height: 100vh;
+    overflow: auto;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .transaction-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    animation: slideDown 0.4s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .transaction-header h1 {
+    color: #d44a4a;
+    margin: 0;
+    font-size: 1.4rem;
+    position: relative;
+  }
+  
+  .transaction-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #d44a4a;
+    animation: underlineGrow 0.6s ease-out;
+  }
+  
+  @keyframes underlineGrow {
+    from { width: 0; }
+    to { width: 40px; }
+  }
+  
+  .controls {
+    display: flex;
+    gap: 0.8rem;
+  }
+  
+  .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .search-bar, .filter-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #1e1e1e;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar:hover, .filter-dropdown:hover {
+    border-color: #5E191A;
+    box-shadow: 0 0 0 2px rgba(94, 25, 26, 0.2);
+  }
+  
+  .search-bar input {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    min-width: 120px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar input:focus {
+    outline: none;
+  }
+  
+  .filter-dropdown select {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+  }
+  
+  .export-btn {
+    background: #5E191A;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .export-btn:hover {
+    background: #4a1415;
+    transform: translateY(-1px);
+  }
+  
+  .transaction-table-container {
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 0.5rem;
+    border: 1px solid #2a2a2a;
+    overflow-x: auto;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  
+  .transaction-table th {
+    text-align: left;
+    padding: 0.6rem;
+    background: #2a2a2a;
+    color: #d44a4a;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  
+  .transaction-table td {
+    padding: 0.6rem;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background-color 0.2s ease;
+  }
+  
+  .transaction-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .transaction-table tr {
+    animation: fadeInRow 0.4s ease-out;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeInRow {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .transaction-table tr:nth-child(1) { animation-delay: 0.1s; }
+  .transaction-table tr:nth-child(2) { animation-delay: 0.2s; }
+  
+  .transaction-table tr:hover td {
+    background-color: rgba(94, 25, 26, 0.1);
+  }
+  
+  .positive { color: #5e191a; font-weight: 600; }
+  .negative { color: #e74a3b; font-weight: 600; }
+  
+  .status, .risk {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .status.pending { 
+    background: rgba(246,194,62,0.1); 
+    color: #f6c23e;
+    animation: pulse 2s infinite;
+  }
+  
+  .status.completed { 
+    background: rgba(25,135,84,0.1); 
+    color: #198754;
+  }
+  
+  .risk.high { 
+    background: rgba(255,152,0,0.1); 
+    color: #ff9800;
+  }
+  
+  .risk.medium { 
+    background: rgba(13,110,253,0.1); 
+    color: #0d6efd;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.4rem;
+  }
+  
+  .actions button {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    padding: 0.2rem;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+  
+  .actions button:hover {
+    transform: scale(1.1);
+  }
+  
+  .actions button.approve { color: #198754; }
+  .actions button.reject { color: #dc3545; }
+  .actions button.receipt { color: #5E191A; }
+  
+  .metrics {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .metric {
+    flex: 1;
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 0.8rem;
+    text-align: center;
+    border-left: 3px solid #5E191A;
+    transition: all 0.3s ease;
+  }
+  
+  .metric:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .metric h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 0.8rem;
+    color: #a0a0a0;
+  }
+  
+  .metric p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .controls {
+      flex-wrap: wrap;
+    }
+    
+    .transaction-table {
+      font-size: 0.8rem;
+    }
+    
+    .transaction-table th, 
+    .transaction-table td {
+      padding: 0.4rem;
+    }
+  }
