@@ -8,6 +8,7 @@ import CostumerManagement from './pages/CostumerManagement';
 import AccountManagement from './pages/AccountManagement';
 import LoanManagement from './pages/LoanManagement';
 import InterestManagement from "./pages/InterestManagement";
+import ReportManagement from "./pages/ReportManagement";
 
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");
@@ -63,7 +64,7 @@ export default function AdminDashboard() {
                 {activeTab === "Account Controls" && <AccountManagement />}
                 {activeTab === "Loans" && <LoanManagement />}
                 {activeTab === "Interest & Fees" && <InterestManagement />}
-                {activeTab === "Reports & Statements" && <p>Generate financial statements and reports.</p>}
+                {activeTab === "Reports & Statements" && <ReportManagement />}
             </main>
         </div>
     );
