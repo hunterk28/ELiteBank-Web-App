@@ -4,6 +4,7 @@ import { FaTachometerAlt, FaExchangeAlt, FaCogs, FaUsers, FaLock, FaSignOutAlt, 
 import "./AdminDash.css";
 import DashboardContent from './pages/DashBoard';
 import Transaction from './pages/Transaction';
+import CostumerManagement from './pages/CostumerManagement';
 
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");
@@ -28,9 +29,6 @@ export default function AdminDashboard() {
                         </li>
                         <li className={activeTab === "Transactions" ? "active" : ""} onClick={() => setActiveTab("Transactions")}>
                             <FaExchangeAlt /> Transactions
-                        </li>
-                        <li className={activeTab === "System Settings" ? "active" : ""} onClick={() => setActiveTab("System Settings")}>
-                            <FaCogs /> System Settings
                         </li>
                         <li className={activeTab === "User Management" ? "active" : ""} onClick={() => setActiveTab("User Management")}>
                             <FaUsers /> Costumer Management
@@ -58,8 +56,7 @@ export default function AdminDashboard() {
             <main className="dashboard-content">
                 {activeTab === "Dashboard" && <DashboardContent />} 
                 {activeTab === "Transactions" && <Transaction />}
-                {activeTab === "System Settings" && <p>Modify bank settings and security configurations.</p>}
-                {activeTab === "User Management" && <p>Manage customer accounts and staff roles.</p>}
+                {activeTab === "User Management" && <CostumerManagement />}
                 {activeTab === "Account Controls" && <p>Approve or suspend accounts based on rules.</p>}
                 {activeTab === "Loans" && <p>Manage loan applications and repayment tracking.</p>}
                 {activeTab === "Interest & Fees" && <p>Calculate interest on loans and deposits.</p>}
