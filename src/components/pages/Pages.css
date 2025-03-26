@@ -43,6 +43,10 @@ body{
 }
 
 .feature-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #FAF3E0;
     padding: 20px;
     border-radius: 12px;
