@@ -1,0 +1,44 @@
+{
+    "admin": [
+        {
+            "id":1,
+            "page":"Dashboard",
+            "icon":"FaTachometerAlt"    
+        },
+        {
+            "id":2,
+            "page":"Transactions",
+            "icon":"FaExchangeAlt"    
+        },
+        {
+            "id":3,
+            "page":"Customer Management",
+            "icon":"FaUsers"    
+        },
+        {
+            "id":4,
+            "page":"Employee Management",
+            "icon":"FaUsers"    
+        },
+        {
+            "id":5,
+            "page":"Account Management",
+            "icon":"FaLock"    
+        },
+        {
+            "id":6,
+            "page":"Loan Management",
+            "icon":"FaMoneyCheckAlt"    
+        },
+        {
+            "id":7,
+            "page":"Interest & Fees",
+            "icon":"FaCalculator"    
+        },
+        {
+            "id":8,
+            "page":"Reports & Statements",
+            "icon":"FaChartBar"    
+        }
+    ]
+}

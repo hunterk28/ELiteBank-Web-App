@@ -7,8 +7,6 @@ export default function Login({ closeModal }) {
 
     function handleSubmit (FormData) {
         closeModal();
-        const admin = FormData.get("admin");
-        const password = FormData.get("admin-password");
         navigate("/admin-dashboard");
     }
 
