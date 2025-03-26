@@ -1,0 +1,97 @@
+{
+    "about": [
+        {
+            "id":1,
+            "title":"Our Mission",
+            "description":"To revolutionize banking with digital solutions that are secure, user-friendly, and efficient."
+        },
+        {
+            "id":2,
+            "title":"Our Vision",
+            "description":"To become the most trusted banking platform by integrating cutting-edge technology with financial services."
+        },
+        {
+            "id":3,
+            "title":"Why Choose us?",
+            "description":"We offer secure transactions, fraud detection, automated loan processing, and real-time account management."
+        }
+    ],
+    "featuresNavbar" : [
+      {
+        "id": 1,
+        "icon": "FaUser",
+        "title": "Customer Management",
+        "description": "Manage customer details, view profiles, and update information."
+      },
+      {
+        "id": 2,
+        "icon": "FaPiggyBank",
+        "title": "Account Management",
+        "description": "Open, close, and manage different types of bank accounts."
+      },
+      {
+        "id": 3,
+        "icon": "FaExchangeAlt",
+        "title": "Transaction Management",
+        "description": "Deposit, withdraw, and transfer funds with real-time processing."
+      },
+      {
+        "id": 4,
+        "icon": "FaHandHoldingUsd",
+        "title": "Loan Management",
+        "description": "Apply for loans, track repayments, and calculate interest automatically."
+      },
+      {
+        "id": 5,
+        "icon": "FaPercentage",
+        "title": "Interest & Fee Calculations",
+        "description": "Automate interest calculations and penalties for late payments."
+      },
+      {
+        "id": 6,
+        "icon": "FaFileAlt",
+        "title": "Reports & Statements",
+        "description": "Generate and export account statements and financial reports."
+      },
+      {
+        "id": 7,
+        "icon": "FaShieldAlt",
+        "title": "Security & Fraud Detection",
+        "description": "Role-based access control, encryption, and fraud alerts."
+      }
+    ],
+    "security":[
+      {
+        "id":1,
+        "title":"End-to-End Encryption",
+        "description":"All transactions are encrypted to ensure your sensitive data is always protected."
+      },
+      {
+          "id":2,
+          "title":"Multi-Factor Authentication",
+          "description":"Additional security layers to prevent unauthorized access to your account."
+      },
+      {
+          "id":3,
+          "title":"Fraud Detection System",
+          "description":"Our AI-powered fraud detection monitors unusual activity to safeguard your funds."
+      }
+    ],
+    "faq":[
+      {
+        "id":1,
+        "title":"How does EliteBank protect my data?",
+        "description":"We use advanced encryption and secure authentication protocols to protect all user data."
+      },
+      {
+          "id":2,
+          "title":"What should I do if I suspect fraud?",
+          "description":"Immediately contact our support team and change your credentials to secure your account."
+      },
+      {
+          "id":3,
+          "title":"Can I enable additional security settings?",
+          "description":"Yes, you can enable multi-factor authentication and set up alerts for suspicious activity."
+      }
+    ]
+}

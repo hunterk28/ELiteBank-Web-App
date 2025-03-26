@@ -8,7 +8,7 @@ body{
     justify-content: space-between; /* Space between text & image */
     padding: 50px 100px;
     height: 80vh;
-    background-image: url("../src/images/backgroundMainImage.png");
+    background-image: url("../../../../src/assets/images/backgroundMainImage.png");
 }
 
 .tagline {
@@ -221,7 +221,7 @@ body{
     background: #F5E1C8;
 }
 
-.faq-item h4 {
+.faq-item h3 {
     font-size: 18px;
     font-weight: 700;
     color: #5E191A;

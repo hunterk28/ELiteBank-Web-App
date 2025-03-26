@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaTachometerAlt, FaExchangeAlt, FaCogs, FaUsers, FaLock, FaSignOutAlt, FaChartBar, FaMoneyCheckAlt, FaCalculator } from "react-icons/fa";
 import "./AdminDash.css";
-import DashboardContent from './pages/DashBoard';
-import Transaction from './pages/Transaction';
-import CostumerManagement from './pages/CostumerManagement';
-import AccountManagement from './pages/AccountManagement';
-import LoanManagement from './pages/LoanManagement';
-import InterestManagement from "./pages/InterestManagement";
-import ReportManagement from "./pages/ReportManagement";
+import DashboardContent from '../pagesAdmin/DashBoard';
+import Transaction from '../pagesAdmin/Transaction';
+import CostumerManagement from '../pagesAdmin/CostumerManagement';
+import AccountManagement from '../pagesAdmin/AccountManagement';
+import LoanManagement from '../pagesAdmin/LoanManagement';
+import InterestManagement from "../pagesAdmin/InterestManagement";
+import ReportManagement from "../pagesAdmin/ReportManagement";
 
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");

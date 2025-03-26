@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"; 
-import "./Pages.css";
+import "../pagesNavbar/Pages.css";
 
 export default function Login({ closeModal }) {
 
@@ -17,11 +17,11 @@ export default function Login({ closeModal }) {
                 <h2>Employee Login</h2>
                 <div className="input-field">
                     <label>Username</label>
-                    <input type="text" />
+                    <input type="text" name="employee" />
                 </div>
                 <div className="input-field">
                     <label>Password</label>
-                    <input type="password" />
+                    <input type="password" name="emp-password"/>
                 </div>
                 <button className="login-submit">Login</button>
             </form>

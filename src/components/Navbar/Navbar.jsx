@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Login from "./pages/Login";
-import SignUp from "./pages/Signup";
-import Admin from './pages/Admin'
-import Employee from './pages/Employee'
+import Login from "./Modals/Login";
+import SignUp from "./Modals/Signup";
+import Admin from './Modals/Admin'
+import Employee from './Modals/Employee'
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -52,7 +52,7 @@ export default function Navbar() {
   return (
     <header className="header">
       <div className="logo-container">
-        <img src="../src/images/logotriotech.png" alt="logoTrioTech" className="logo" />
+        <img src="../../../src/assets/images/logotriotech.png" alt="logoTrioTech" className="logo" />
         <div className="text">
           <h1 className="top">Elite</h1>
           <h1 className="bottom">Bank</h1>

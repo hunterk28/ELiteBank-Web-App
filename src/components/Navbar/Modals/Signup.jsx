@@ -1,4 +1,4 @@
-import "./Pages.css";
+import "../pagesNavbar/Pages.css";
 
 export default function SignUp({ closeModal, openLogin }) {
     return (

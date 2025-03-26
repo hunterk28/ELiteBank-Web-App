@@ -1,20 +1,10 @@
-import { useNavigate } from "react-router-dom"; 
-import "./Pages.css";
+import "../pagesNavbar/Pages.css";
 
-export default function Login({ closeModal }) {
-
-    const navigate = useNavigate();
-
-    function handleSubmit () {
-        closeModal();
-        navigate("/admin-dashboard");
-    }
-
-
+export default function Login({ closeModal, openSignUp }) {
     return (
         <div className="modal-overlay" onClick={closeModal}>
-            <form action={handleSubmit} className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h2>Admin Login</h2>
+            <form className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <h2>Login</h2>
                 <div className="input-field">
                     <label>Username</label>
                     <input type="text" />
@@ -24,6 +14,9 @@ export default function Login({ closeModal }) {
                     <input type="password" />
                 </div>
                 <button className="login-submit">Login</button>
+                <p className="signup-text">
+                    Don't have an account? <span className="signup-link" onClick={openSignUp}>Sign Up</span>
+                </p>
             </form>
         </div>
     );

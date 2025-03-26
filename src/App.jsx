@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/pages/Home";
-import AboutUs from "./components/pages/Aboutus";
-import Features from "./components/pages/Features";
-import Security from "./components/pages/Security";
-import SignUp from "./components/pages/Signup";
-import Login from "./components/pages/Login";
-import Admin from "./components/pages/Admin";
-import Employee from './components/pages/Employee'
-import AdminDashboard from "./components/adminDashboard/AdminDashboard";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Navbar/pagesNavbar/Home";
+import AboutUs from "./components/Navbar/pagesNavbar/Aboutus";
+import Features from "./components/Navbar/pagesNavbar/Features";
+import Security from "./components/Navbar/pagesNavbar/Security";
+import SignUp from "./components/Navbar/Modals/Signup";
+import Login from "./components/Navbar/Modals/Login";
+import Admin from "./components/Navbar/Modals/Admin";
+import Employee from './components/Navbar/Modals/Employee'
+import AdminDashboard from "./components/adminDashboard/Admin/AdminDashboard";
 
 function AppWrapper() {
   const location = useLocation();
