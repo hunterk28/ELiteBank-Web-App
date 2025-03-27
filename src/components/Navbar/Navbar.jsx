@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <header className="header">
       <div className="logo-container">
-        <img src="../../../src/assets/images/logotriotech.png" alt="logoTrioTech" className="logo" />
+        <img src="/logotriotech.png" alt="logoTrioTech" className="logo" />
         <div className="text">
           <h1 className="top">Elite</h1>
           <h1 className="bottom">Bank</h1>
