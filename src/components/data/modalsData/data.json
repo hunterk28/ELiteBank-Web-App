@@ -17,26 +17,21 @@
         },
         {
             "id":4,
-            "page":"Employee Management",
-            "icon":"FaUsers"    
-        },
-        {
-            "id":5,
             "page":"Account Management",
             "icon":"FaLock"    
         },
         {
-            "id":6,
+            "id":5,
             "page":"Loan Management",
             "icon":"FaMoneyCheckAlt"    
         },
         {
-            "id":7,
+            "id":6,
             "page":"Interest & Fees",
             "icon":"FaCalculator"    
         },
         {
-            "id":8,
+            "id":7,
             "page":"Reports & Statements",
             "icon":"FaChartBar"    
         }

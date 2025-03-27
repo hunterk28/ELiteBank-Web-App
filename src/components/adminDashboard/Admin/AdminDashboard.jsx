@@ -6,7 +6,6 @@ import Data from "../../data/modalsData/data.json";
 import DashboardContent from '../pagesAdmin/DashBoard';
 import Transaction from '../pagesAdmin/Transaction';
 import CostumerManagement from '../pagesAdmin/CostumerManagement';
-import EmployeeManagement from "../pagesAdmin/EmployeeManagement";
 import AccountManagement from '../pagesAdmin/AccountManagement';
 import LoanManagement from '../pagesAdmin/LoanManagement';
 import InterestManagement from "../pagesAdmin/InterestManagement";

@@ -7,12 +7,11 @@ import Security from "./components/Navbar/pagesNavbar/Security";
 import SignUp from "./components/Navbar/Modals/Signup";
 import Login from "./components/Navbar/Modals/Login";
 import Admin from "./components/Navbar/Modals/Admin";
-import Employee from './components/Navbar/Modals/Employee'
 import AdminDashboard from "./components/adminDashboard/Admin/AdminDashboard";
 
 function AppWrapper() {
   const location = useLocation();
-  const hideNavbarRoutes = ["/admin-dashboard","employee-dashboard"];
+  const hideNavbarRoutes = ["/admin-dashboard","user-dashboard"];
 
   return (
     <>
@@ -23,7 +22,6 @@ function AppWrapper() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/security" element={<Security />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/employee" element={<Employee />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
