@@ -71,15 +71,11 @@
 .second-list li a {
     text-decoration: none;
     color: white;
-    padding: 8px 12px;
-    border: 1px solid white;
-    border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
 
 .second-list li a:hover {
-    background-color: #5E191A;
-    color: white;
+    color: #5E191A;
 }
 
 /* --- Mobile Menu (Hamburger) --- */
