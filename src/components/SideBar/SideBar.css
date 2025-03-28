@@ -1,166 +1,169 @@
-/* Admin Dashboard Dark Theme - No Scrollbar Version */
+/* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0a0a0a;
-    color: #e0e0e0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #111;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+  z-index: 100;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+}
+
+/* Show Sidebar when 'open' class is added */
+.sidebar.open {
+  left: 0;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 20px;
+  gap: 15px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  background-color: #2a2a2a;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.logo h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.elite {
+  color: #d44a4a;
+  font-weight: 700;
+}
+
+/* Navigation Menu */
+.adminNav {
+  flex-grow: 1;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation List Items */
+.adminNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.adminNav ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Adds spacing between icon and text */
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #e0e0e0; /* Ensure text is visible */
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.adminNav ul li:hover {
+  background-color: #1e1e1e;
+}
+
+.adminNav ul li.active {
+  background-color: #2a2a2a;
+  border-left: 3px solid #d44a4a;
+}
+
+/* Icon Styling */
+.adminNav ul li svg {
+  font-size: 18px;
+  color: #a0a0a0;
+}
+
+.adminNav ul li.active svg,
+.adminNav ul li:hover svg {
+  color: #d44a4a;
+}
+
+/* Logout Button */
+.logout {
+  padding: 15px 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #a0a0a0;
+  transition: all 0.3s ease;
+  border-top: 1px solid #2a2a2a;
+}
+
+.logout:hover {
+  background-color: #1e1e1e;
+  color: #d44a4a;
+}
+
+.logout svg {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+/* Mobile Sidebar Button */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
   }
-  
-  /* Sidebar Styling - No Scrollbar */
+
   .sidebar {
-    width: 250px;
-    background-color: #111;
-    color: white;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 0;
-    z-index: 100;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Navigation Menu - Scrollbar Removed */
-  .adminNav {
-    flex-grow: 1;
-    padding: 20px 0;
-    overflow: hidden; /* Changed from auto to hidden to remove scrollbar */
-  }
-  
-  .adminNav:hover {
-    overflow-y: auto; /* Optional: Show scrollbar only on hover */
-  }
-  
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .adminNav::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .adminNav {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  
-  /* Rest of your CSS remains exactly the same */
-  .logo {
-    display: flex;
-    align-items: center;
-    padding: 0 20px 20px;
-    gap: 15px;
-  }
-  
-  .logo img {
-    width: 40px;
-    height: 40px;
-    background-color: #2a2a2a;
-    border-radius: 50%;
-    padding: 5px;
-  }
-  
-  .logo h2 {
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 600;
-  }
-  
-  .elite {
-    color: #d44a4a;
-    font-weight: 700;
-  }
-  
-  .adminNav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .adminNav ul li {
-    display: flex;
-    align-items: center;
-    padding: 12px 25px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
-  }
-  
-  .adminNav ul li:hover {
-    background-color: #1e1e1e;
-  }
-  
-  .adminNav ul li.active {
-    background-color: #2a2a2a;
-    border-left: 3px solid #d44a4a;
-  }
-  
-  .adminNav ul li svg {
-    margin-right: 12px;
-    font-size: 18px;
-    color: #a0a0a0;
-  }
-  
-  .adminNav ul li.active svg,
-  .adminNav ul li:hover svg {
-    color: #d44a4a;
-  }
-  
-  .logout {
-    padding: 15px 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    color: #a0a0a0;
-    transition: all 0.3s ease;
-    border-top: 1px solid #2a2a2a;
-  }
-  
-  .logout:hover {
-    background-color: #1e1e1e;
-    color: #d44a4a;
-  }
-  
-  .logout svg {
-    margin-right: 12px;
-    font-size: 18px;
-  }
-  
-  /* Responsive adjustments remain the same */
-  @media (max-width: 992px) {
-    .sidebar {
       width: 220px;
-    }
+      left: -220px;
   }
-  
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-      flex-direction: row;
-      padding: 10px;
-    }
-    
-    .logo {
-      padding: 10px;
-      border-bottom: none;
-    }
-    
-    .adminNav {
-      display: none;
-    }
+
+  .sidebar.open {
+      left: 0;
   }
-  
-  @media (max-width: 576px) {
-    .logo h2 {
+}
+
+@media (max-width: 576px) {
+  .logo h2 {
       display: none;
-    }
-    
-    .logo img {
+  }
+
+  .logo img {
       width: 35px;
       height: 35px;
-    }
   }
+}
