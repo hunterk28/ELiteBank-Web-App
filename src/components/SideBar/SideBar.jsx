@@ -20,7 +20,7 @@ export default function SideBar ({navItems, iconArray, activeTab, setActiveTab})
                     <img src="/bankLogo.png" alt="Elite Bank" />
                     <h2><span className="elite">ELITE</span> BANK</h2>
                 </div>
-                <nav className="adminNav">
+                <nav className="Nav">
                     <ul>
                         {navItems?.map((item) => {
                             const IconComponent = iconArray[item.icon];

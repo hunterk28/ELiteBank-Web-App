@@ -8,10 +8,11 @@ import SignUp from "./components/Navbar/Modals/Signup";
 import Login from "./components/Navbar/Modals/Login";
 import Admin from "./components/Navbar/Modals/Admin";
 import AdminDashboard from "./components/adminDashboard/Admin/AdminDashboard";
+import UserDashboard from './components/userDashboard/User/UserDashboard'
 
 function AppWrapper() {
   const location = useLocation();
-  const hideNavbarRoutes = ["/admin-dashboard","user-dashboard"];
+  const hideNavbarRoutes = ["/admin-dashboard","/user-dashboard"];
 
   return (
     <>
@@ -24,6 +25,7 @@ function AppWrapper() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
     </>

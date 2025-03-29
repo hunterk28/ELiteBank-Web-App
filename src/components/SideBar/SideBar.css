@@ -58,7 +58,7 @@ body {
 }
 
 /* Navigation Menu */
-.adminNav {
+.Nav {
   flex-grow: 1;
   padding: 10px 0;
   width: 100%;
@@ -67,14 +67,14 @@ body {
 }
 
 /* Navigation List Items */
-.adminNav ul {
+.Nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
 
-.adminNav ul li {
+.Nav ul li {
   display: flex;
   align-items: center;
   gap: 12px; /* Adds spacing between icon and text */
@@ -86,23 +86,23 @@ body {
   border-left: 3px solid transparent;
 }
 
-.adminNav ul li:hover {
+.Nav ul li:hover {
   background-color: #1e1e1e;
 }
 
-.adminNav ul li.active {
+.Nav ul li.active {
   background-color: #2a2a2a;
   border-left: 3px solid #d44a4a;
 }
 
 /* Icon Styling */
-.adminNav ul li svg {
+.Nav ul li svg {
   font-size: 18px;
   color: #a0a0a0;
 }
 
-.adminNav ul li.active svg,
-.adminNav ul li:hover svg {
+.Nav ul li.active svg,
+.Nav ul li:hover svg {
   color: #d44a4a;
 }
 
