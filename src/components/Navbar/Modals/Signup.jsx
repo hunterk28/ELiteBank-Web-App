@@ -25,8 +25,8 @@ export default function SignUp({ closeModal, openLogin }) {
                         <input type="text" placeholder="Punjab" />
                     </div>
                     <div className="signup-input-field">
-                        <label>Postal Code</label>
-                        <input type="text" placeholder="54000" />
+                        <label>Phone No</label>
+                        <input type="text" placeholder="+1 (555) 123-4567" />
                     </div>
                     <div className="signup-input-field">
                         <label>Date of birth</label>
