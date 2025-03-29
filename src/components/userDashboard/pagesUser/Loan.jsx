@@ -10,84 +10,21 @@ import {
   FaPlus
 } from 'react-icons/fa';
 import './Loan.css';
+import Data from '../../data/pagesUserData/data.json'
 
 export default function Loan() {
   // State for tabs
   const [activeTab, setActiveTab] = useState('myLoans');
   
   // Sample data (static for frontend)
-  const activeLoans = [
-    {
-      id: 1,
-      loanNumber: 'LN-2023-0456',
-      type: 'Personal Loan',
-      amount: 15000,
-      remaining: 12500,
-      interestRate: 7.5,
-      nextPayment: '2023-07-15',
-      status: 'active'
-    },
-    {
-      id: 2,
-      loanNumber: 'LN-2023-0789',
-      type: 'Auto Loan',
-      amount: 25000,
-      remaining: 8000,
-      interestRate: 5.2,
-      nextPayment: '2023-07-20',
-      status: 'active'
-    }
-  ];
+  const activeLoans = Data.activeLoans.map(e=>e);
 
-  const loanApplications = [
-    {
-      id: 1,
-      loanNumber: 'APP-2023-1001',
-      type: 'Home Loan',
-      amount: 300000,
-      appliedDate: '2023-06-01',
-      status: 'pending'
-    },
-    {
-      id: 2,
-      loanNumber: 'APP-2023-0923',
-      type: 'Business Loan',
-      amount: 50000,
-      appliedDate: '2023-05-15',
-      status: 'rejected'
-    }
-  ];
+  const loanApplications = Data.loanApplications.map(e=>e);
 
-  const loanProducts = [
-    {
-      id: 1,
-      name: 'Personal Loan',
-      rate: '7.5% - 12%',
-      amount: 'Up to $50,000',
-      term: '1-5 years'
-    },
-    {
-      id: 2,
-      name: 'Auto Loan',
-      rate: '5.2% - 8%',
-      amount: 'Up to $100,000',
-      term: '1-7 years'
-    },
-    {
-      id: 3,
-      name: 'Home Loan',
-      rate: '4.5% - 6.5%',
-      amount: 'Up to $1,000,000',
-      term: '10-30 years'
-    }
-  ];
+  const loanProducts = Data.loanProducts.map(e=>e);
 
   // Sample repayment schedule
-  const repaymentSchedule = [
-    { month: 'Jul 2023', payment: 1250.50, principal: 950.25, interest: 300.25, balance: 11549.75 },
-    { month: 'Aug 2023', payment: 1250.50, principal: 960.75, interest: 289.75, balance: 10589.00 },
-    { month: 'Sep 2023', payment: 1250.50, principal: 970.50, interest: 280.00, balance: 9618.50 }
-  ];
+  const repaymentSchedule = Data.repaymentSchedule.map(e=>e);
 
   return (
     <div className="loan-container">

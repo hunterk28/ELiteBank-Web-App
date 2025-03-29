@@ -8,24 +8,15 @@ import {
   FaPrint
 } from 'react-icons/fa';
 import './Report.css';
+import Data from '../../data/pagesUserData/data.json'
 
 export default function Reports() {
   // Sample report data (static for frontend)
-  const monthlySummaries = [
-    { id: 1, month: 'June 2023', income: 3500, expenses: 1200, net: 2300 },
-    { id: 2, month: 'May 2023', income: 3200, expenses: 1100, net: 2100 },
-    { id: 3, month: 'April 2023', income: 3400, expenses: 1300, net: 2100 }
-  ];
+  const monthlySummaries = Data.monthlySummaries.map(e=>e);
 
-  const interestReports = [
-    { id: 1, account: 'Premium Savings', type: 'Earned', amount: 42.50, period: 'Q2 2023' },
-    { id: 2, account: 'Mortgage', type: 'Paid', amount: 320.75, period: 'Q2 2023' }
-  ];
+  const interestReports = Data.interestReports.map(e=>e);
 
-  const loanStatements = [
-    { id: 1, loanId: 'LN-2023-0456', balance: 12500, nextPayment: '2023-07-15' },
-    { id: 2, loanId: 'LN-2023-0789', balance: 8000, nextPayment: '2023-07-20' }
-  ];
+  const loanStatements = Data.loanStatements.map(e=>e);
 
   return (
     <div className="reports-container">

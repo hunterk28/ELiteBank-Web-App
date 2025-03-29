@@ -9,84 +9,30 @@ import {
   FaChevronUp
 } from 'react-icons/fa';
 import './HelpSupport.css';
+import Data from '../../data/pagesUserData/data.json'
 
 export default function HelpSupport() {
   const [activeTab, setActiveTab] = useState('faqs');
   const [expandedFaq, setExpandedFaq] = useState(null);
 
+  const iconComponents = {
+  FaQuestionCircle,
+  FaHeadset,
+  FaEnvelope,
+  FaPhone,
+  FaFileAlt,
+  FaChevronDown,
+  FaChevronUp
+  }
+
   // Sample FAQ data
-  const faqs = [
-    {
-      id: 1,
-      question: "How do I reset my password?",
-      answer: "You can reset your password by going to Settings > Password & Security. Click on 'Forgot Password' and follow the instructions sent to your registered email."
-    },
-    {
-      id: 2,
-      question: "What are your business hours?",
-      answer: "Our customer support is available 24/7. Branch services are available Monday to Friday from 9:00 AM to 5:00 PM."
-    },
-    {
-      id: 3,
-      question: "How do I link an external bank account?",
-      answer: "Navigate to Settings > Linked Accounts and click 'Add New Account'. You'll need to provide the account details and verify the account through micro-deposits."
-    },
-    {
-      id: 4,
-      question: "What should I do if I suspect fraudulent activity?",
-      answer: "Immediately contact our 24/7 fraud hotline at 1-800-FRAUD-ALERT and freeze your account through the app under Security Settings."
-    }
-  ];
+  const faqs = Data.faqs.map(e=>e);
 
   // Sample contact options
-  const contactOptions = [
-    {
-      id: 1,
-      type: 'liveChat',
-      title: 'Live Chat',
-      description: 'Instant messaging with a support representative',
-      icon: <FaHeadset />,
-      availability: '24/7'
-    },
-    {
-      id: 2,
-      type: 'email',
-      title: 'Email Support',
-      description: 'Get a response within 24 hours',
-      icon: <FaEnvelope />,
-      availability: '24/7'
-    },
-    {
-      id: 3,
-      type: 'phone',
-      title: 'Phone Support',
-      description: 'Speak directly with a customer service agent',
-      icon: <FaPhone />,
-      availability: 'Mon-Fri, 8AM-8PM EST'
-    }
-  ];
+  const contactOptions = Data.contactOptions.map(e=>e);
 
   // Sample documents
-  const documents = [
-    {
-      id: 1,
-      title: 'Privacy Policy',
-      description: 'How we collect and use your information',
-      icon: <FaFileAlt />
-    },
-    {
-      id: 2,
-      title: 'Terms of Service',
-      description: 'Agreement between you and EliteBank',
-      icon: <FaFileAlt />
-    },
-    {
-      id: 3,
-      title: 'Fee Schedule',
-      description: 'Detailed breakdown of all account fees',
-      icon: <FaFileAlt />
-    }
-  ];
+  const documents = Data.documents.map(e=>e);
 
   const toggleFaq = (id) => {
     setExpandedFaq(expandedFaq === id ? null : id);
@@ -151,10 +97,12 @@ export default function HelpSupport() {
         <div className="contact-section">
           <h3>Contact Options</h3>
           <div className="contact-options">
-            {contactOptions.map(option => (
+            {contactOptions.map(option => {
+              const Icon = iconComponents[option.icon]
+            return(
               <div key={option.id} className="contact-card">
                 <div className="contact-icon" style={{ color: '#d44a4a' }}>
-                  {option.icon}
+                  <Icon />
                 </div>
                 <div className="contact-info">
                   <h4>{option.title}</h4>
@@ -166,7 +114,7 @@ export default function HelpSupport() {
                    option.type === 'email' ? 'Send Email' : 'Call Now'}
                 </button>
               </div>
-            ))}
+            )})}
           </div>
         </div>
       )}
@@ -175,10 +123,12 @@ export default function HelpSupport() {
         <div className="policies-section">
           <h3>Bank Policies & Terms</h3>
           <div className="documents-grid">
-            {documents.map(doc => (
+            {documents.map(doc => {
+              const Icon = iconComponents[doc.icon] 
+            return(
               <div key={doc.id} className="document-card">
                 <div className="doc-icon">
-                  {doc.icon}
+                  <Icon />
                 </div>
                 <div className="doc-info">
                   <h4>{doc.title}</h4>
@@ -186,7 +136,7 @@ export default function HelpSupport() {
                 </div>
                 <button className="view-btn">View Document</button>
               </div>
-            ))}
+            )})}
           </div>
         </div>
       )}

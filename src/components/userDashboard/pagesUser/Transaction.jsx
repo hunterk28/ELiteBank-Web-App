@@ -11,19 +11,13 @@ import {
   FaTimes
 } from 'react-icons/fa';
 import './Transaction.css';
+import Data from '../../data/pagesUserData/data.json'
 
 export default function Transactions() {
   // Static data for display only
-  const allTransactions = [
-    { id: 1, date: '2023-06-15', description: 'Grocery Store', type: 'debit', amount: 85.20, status: 'completed' },
-    { id: 2, date: '2023-06-14', description: 'Salary Deposit', type: 'credit', amount: 3500.00, status: 'completed' },
-    { id: 3, date: '2023-06-10', description: 'Electric Bill', type: 'debit', amount: 120.75, status: 'completed' },
-    { id: 4, date: '2023-06-05', description: 'Restaurant', type: 'debit', amount: 45.60, status: 'pending' }
-  ];
+  const allTransactions = Data.allTransactions.map(e=>e)
 
-  const userAccounts = [
-    { id: 1, number: 'ELITE-7890-4567-1234', balance: 15200.50, type: 'Premium Savings' }
-  ];
+  const userAccounts = Data.userAccounts.map(e=>e);
 
   return (
     <div className="transactions-container">

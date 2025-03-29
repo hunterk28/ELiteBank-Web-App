@@ -10,24 +10,16 @@ import {
   FaPhone 
 } from 'react-icons/fa';
 import './Account.css';
+import Data from '../../data/pagesUserData/data.json'
 
 
 export default function Account () {
   const [isEditing, setIsEditing] = useState(false);
   
   // Sample data (replace with API calls)
-  const account = {
-    number: 'ELITE-7890-4567-1234',
-    type: 'Premium Savings',
-    balance: 15200.50,
-    status: 'Active'
-  };
+  const account = Data.account
 
-  const recentTransactions = [
-    { id: 1, description: 'Grocery Store', date: 'Today, 10:45 AM', amount: 85.20, type: 'debit' },
-    { id: 2, description: 'Salary Deposit', date: 'May 30, 9:00 AM', amount: 3500.00, type: 'credit' },
-    { id: 3, description: 'Electric Bill', date: 'May 28, 2:30 PM', amount: 120.75, type: 'debit' }
-  ];
+  const recentTransactions = Data.recentTransactions.map(e=>e);
 
   const [user, setUser] = useState({
     name: 'Alexandra Smith',

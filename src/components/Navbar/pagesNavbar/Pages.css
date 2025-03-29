@@ -244,7 +244,7 @@ body{
 }
 
 /* Modal Overlay - Enhanced */
-.modal-overlay {
+.modal-overlay-login {
     position: fixed;
     top: 0;
     left: 0;
@@ -260,7 +260,7 @@ body{
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content-login {
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -272,7 +272,7 @@ body{
 }
 
 /* Title */
-.modal-content h2 {
+.modal-content-login h2 {
     font-size: 24px;
     font-weight: bold;
     color: #5E191A;

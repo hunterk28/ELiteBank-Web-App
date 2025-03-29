@@ -1,0 +1,423 @@
+{
+    "account": {
+    "number": "ELITE-7890-4567-1234",
+    "type": "Premium Savings",
+    "balance": 15200.50,
+    "status": "Active"
+  },
+  "recentTransactions": [
+    {
+      "id": 1,
+      "description": "Grocery Store",
+      "date": "Today, 10:45 AM",
+      "amount": 85.20,
+      "type": "debit"
+    },
+    {
+      "id": 2,
+      "description": "Salary Deposit",
+      "date": "May 30, 9:00 AM",
+      "amount": 3500.00,
+      "type": "credit"
+    },
+    {
+      "id": 3,
+      "description": "Electric Bill",
+      "date": "May 28, 2:30 PM",
+      "amount": 120.75,
+      "type": "debit"
+    }
+  ],
+  "allTransactions": [
+    {
+      "id": 1,
+      "date": "2023-06-15",
+      "description": "Grocery Store",
+      "type": "debit",
+      "amount": 85.20,
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "date": "2023-06-14",
+      "description": "Salary Deposit",
+      "type": "credit",
+      "amount": 3500.00,
+      "status": "completed"
+    },
+    {
+      "id": 3,
+      "date": "2023-06-10",
+      "description": "Electric Bill",
+      "type": "debit",
+      "amount": 120.75,
+      "status": "completed"
+    },
+    {
+      "id": 4,
+      "date": "2023-06-05",
+      "description": "Restaurant",
+      "type": "debit",
+      "amount": 45.60,
+      "status": "pending"
+    }
+  ],
+  "userAccounts": [
+    {
+      "id": 1,
+      "number": "ELITE-7890-4567-1234",
+      "balance": 15200.50,
+      "type": "Premium Savings"
+    }
+  ],
+  "monthlySummaries": [
+    {
+      "id": 1,
+      "month": "June 2023",
+      "income": 3500,
+      "expenses": 1200,
+      "net": 2300
+    },
+    {
+      "id": 2,
+      "month": "May 2023",
+      "income": 3200,
+      "expenses": 1100,
+      "net": 2100
+    },
+    {
+      "id": 3,
+      "month": "April 2023",
+      "income": 3400,
+      "expenses": 1300,
+      "net": 2100
+    }
+  ],
+  "interestReports": [
+    {
+      "id": 1,
+      "account": "Premium Savings",
+      "type": "Earned",
+      "amount": 42.50,
+      "period": "Q2 2023"
+    },
+    {
+      "id": 2,
+      "account": "Mortgage",
+      "type": "Paid",
+      "amount": 320.75,
+      "period": "Q2 2023"
+    }
+  ],
+  "loanStatements": [
+    {
+      "id": 1,
+      "loanId": "LN-2023-0456",
+      "balance": 12500,
+      "nextPayment": "2023-07-15"
+    },
+    {
+      "id": 2,
+      "loanId": "LN-2023-0789",
+      "balance": 8000,
+      "nextPayment": "2023-07-20"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "type": "transaction",
+      "title": "Deposit Received",
+      "message": "Salary deposit of $3,500.00 has been credited to your account",
+      "time": "10 minutes ago",
+      "read": false,
+      "icon": "FaMoneyBillWave"
+    },
+    {
+      "id": 2,
+      "type": "loan",
+      "title": "Loan Approved",
+      "message": "Your personal loan application (#LN-2023-0456) has been approved",
+      "time": "2 hours ago",
+      "read": false,
+      "icon": "FaCheckCircle"
+    },
+    {
+      "id": 3,
+      "type": "security",
+      "title": "Suspicious Login Attempt",
+      "message": "Failed login attempt from new device (Chrome, Windows)",
+      "time": "Yesterday",
+      "read": true,
+      "icon": "FaShieldAlt"
+    },
+    {
+      "id": 4,
+      "type": "announcement",
+      "title": "System Maintenance",
+      "message": "Mobile banking will be unavailable Sunday 2AM-4AM for maintenance",
+      "time": "Jun 15",
+      "read": true,
+      "icon": "FaInfoCircle"
+    },
+    {
+      "id": 5,
+      "type": "transaction",
+      "title": "Withdrawal Alert",
+      "message": "$200.00 withdrawn from ATM at 125 Main St",
+      "time": "Jun 14",
+      "read": true,
+      "icon": "FaMoneyBillWave"
+    }
+  ],
+  "activeLoans": [
+    {
+      "id": 1,
+      "loanNumber": "LN-2023-0456",
+      "type": "Personal Loan",
+      "amount": 15000,
+      "remaining": 12500,
+      "interestRate": 7.5,
+      "nextPayment": "2023-07-15",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "loanNumber": "LN-2023-0789",
+      "type": "Auto Loan",
+      "amount": 25000,
+      "remaining": 8000,
+      "interestRate": 5.2,
+      "nextPayment": "2023-07-20",
+      "status": "active"
+    }
+  ],
+  "loanApplications": [
+    {
+      "id": 1,
+      "loanNumber": "APP-2023-1001",
+      "type": "Home Loan",
+      "amount": 300000,
+      "appliedDate": "2023-06-01",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "loanNumber": "APP-2023-0923",
+      "type": "Business Loan",
+      "amount": 50000,
+      "appliedDate": "2023-05-15",
+      "status": "rejected"
+    }
+  ],
+  "loanProducts": [
+    {
+      "id": 1,
+      "name": "Personal Loan",
+      "rate": "7.5% - 12%",
+      "amount": "Up to $50,000",
+      "term": "1-5 years"
+    },
+    {
+      "id": 2,
+      "name": "Auto Loan",
+      "rate": "5.2% - 8%",
+      "amount": "Up to $100,000",
+      "term": "1-7 years"
+    },
+    {
+      "id": 3,
+      "name": "Home Loan",
+      "rate": "4.5% - 6.5%",
+      "amount": "Up to $1,000,000",
+      "term": "10-30 years"
+    }
+  ],
+  "repaymentSchedule": [
+    {
+      "id":1,  
+      "month": "Jul 2023",
+      "payment": 1250.50,
+      "principal": 950.25,
+      "interest": 300.25,
+      "balance": 11549.75
+    },
+    {
+      "id":2,
+      "month": "Aug 2023",
+      "payment": 1250.50,
+      "principal": 960.75,
+      "interest": 289.75,
+      "balance": 10589.00
+    },
+    {
+      "id":3,
+      "month": "Sep 2023",
+      "payment": 1250.50,
+      "principal": 970.50,
+      "interest": 280.00,
+      "balance": 9618.50
+    }
+  ],
+  "referralProgram": {
+    "title": "Invite Friends, Earn Rewards",
+    "description": "Get $50 for every friend who joins EliteBank and opens an account with at least $500 deposit.",
+    "steps": [
+      "Share your unique referral link",
+      "Friend opens a new account",
+      "You both get rewarded"
+    ],
+    "reward": "$50 per successful referral"
+  },
+  "specialOffers": [
+    {
+      "id": 1,
+      "title": "Premium Credit Card",
+      "description": "0% APR for first 12 months + 50,000 bonus points",
+      "icon": "FaCreditCard",
+      "category": "cards"
+    },
+    {
+      "id": 2,
+      "title": "Wealth Management",
+      "description": "Free financial planning session for balances over $25k",
+      "icon": "FaChartPie",
+      "category": "services"
+    },
+    {
+      "id": 3,
+      "title": "Enhanced Security",
+      "description": "Free identity protection for 1 year with new accounts",
+      "icon": "FaShieldAlt",
+      "category": "security"
+    }
+  ],
+  "additionalServices": [
+    {
+      "id": 1,
+      "title": "Investment Accounts",
+      "description": "Start investing with as little as $100",
+      "icon": "FaPiggyBank"
+    },
+    {
+      "id": 2,
+      "title": "Insurance Products",
+      "description": "Life, home, and auto insurance options",
+      "icon": "FaShieldAlt"
+    },
+    {
+      "id": 3,
+      "title": "Business Banking",
+      "description": "Special accounts for entrepreneurs",
+      "icon": "FaUserFriends"
+    }
+  ],
+  "linkedAccounts": [
+    { 
+        "id": 1, 
+        "bank": "Chase", 
+        "accountNumber": "****4567", 
+        "status": "verified" 
+    },
+    { 
+        "id": 2, 
+        "bank": "Bank of America", 
+        "accountNumber": "****8910", 
+        "status": "pending" 
+    }
+  ],
+  "notificationPrefs": [
+        { 
+            "id": 1, 
+            "type": "transaction", 
+            "label": "Transaction Alerts", 
+            "enabled": true 
+        },
+        { 
+            "id": 2, 
+            "type": "security", 
+            "label": "Security Alerts", 
+            "enabled": true 
+        },
+        { 
+            "id": 3, 
+            "type": "marketing", 
+            "label": "Promotional Offers", 
+            "enabled": false 
+        },
+        { 
+            "id": 4, 
+            "type": "account", 
+            "label": "Account Updates", 
+            "enabled": true 
+        }
+    ],
+    "faqs": [
+    {
+      "id": 1,
+      "question": "How do I reset my password?",
+      "answer": "You can reset your password by going to Settings > Password & Security. Click on 'Forgot Password' and follow the instructions sent to your registered email."
+    },
+    {
+      "id": 2,
+      "question": "What are your business hours?",
+      "answer": "Our customer support is available 24/7. Branch services are available Monday to Friday from 9:00 AM to 5:00 PM."
+    },
+    {
+      "id": 3,
+      "question": "How do I link an external bank account?",
+      "answer": "Navigate to Settings > Linked Accounts and click 'Add New Account'. You'll need to provide the account details and verify the account through micro-deposits."
+    },
+    {
+      "id": 4,
+      "question": "What should I do if I suspect fraudulent activity?",
+      "answer": "Immediately contact our 24/7 fraud hotline at 1-800-FRAUD-ALERT and freeze your account through the app under Security Settings."
+    }
+  ],
+  "contactOptions": [
+    {
+      "id": 1,
+      "type": "liveChat",
+      "title": "Live Chat",
+      "description": "Instant messaging with a support representative",
+      "icon": "FaHeadset",
+      "availability": "24/7"
+    },
+    {
+      "id": 2,
+      "type": "email",
+      "title": "Email Support",
+      "description": "Get a response within 24 hours",
+      "icon": "FaEnvelope",
+      "availability": "24/7"
+    },
+    {
+      "id": 3,
+      "type": "phone",
+      "title": "Phone Support",
+      "description": "Speak directly with a customer service agent",
+      "icon": "FaPhone",
+      "availability": "Mon-Fri, 8AM-8PM EST"
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "title": "Privacy Policy",
+      "description": "How we collect and use your information",
+      "icon": "FaFileAlt"
+    },
+    {
+      "id": 2,
+      "title": "Terms of Service",
+      "description": "Agreement between you and EliteBank",
+      "icon": "FaFileAlt"
+    },
+    {
+      "id": 3,
+      "title": "Fee Schedule",
+      "description": "Detailed breakdown of all account fees",
+      "icon": "FaFileAlt"
+    }
+  ]
+}

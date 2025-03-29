@@ -89,6 +89,8 @@
 
 .faq-item.expanded {
     border-color: #5E191A;
+    background-color: #FAF3E0;
+    color: black;
 }
 
 .faq-question {

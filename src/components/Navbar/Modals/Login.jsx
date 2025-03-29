@@ -11,8 +11,8 @@ export default function Login({ closeModal, openSignUp }) {
     }
 
     return (
-        <div className="modal-overlay" onClick={closeModal}>
-            <form action={handleSubmit} className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-overlay-login" onClick={closeModal}>
+            <form action={handleSubmit} className="modal-content-login" onClick={(e) => e.stopPropagation()}>
                 <h2>Login</h2>
                 <div className="input-field">
                     <label>Username</label>

@@ -9,64 +9,26 @@ import {
   FaUserFriends
 } from 'react-icons/fa';
 import './Others.css';
+import Data from '../../data/pagesUserData/data.json'
 
 export default function Others() {
   // Sample data (static for frontend)
-  const referralProgram = {
-    title: "Invite Friends, Earn Rewards",
-    description: "Get $50 for every friend who joins EliteBank and opens an account with at least $500 deposit.",
-    steps: [
-      "Share your unique referral link",
-      "Friend opens a new account",
-      "You both get rewarded"
-    ],
-    reward: "$50 per successful referral"
-  };
 
-  const specialOffers = [
-    {
-      id: 1,
-      title: "Premium Credit Card",
-      description: "0% APR for first 12 months + 50,000 bonus points",
-      icon: <FaCreditCard />,
-      category: "cards"
-    },
-    {
-      id: 2,
-      title: "Wealth Management",
-      description: "Free financial planning session for balances over $25k",
-      icon: <FaChartPie />,
-      category: "services"
-    },
-    {
-      id: 3,
-      title: "Enhanced Security",
-      description: "Free identity protection for 1 year with new accounts",
-      icon: <FaShieldAlt />,
-      category: "security"
-    }
-  ];
+  const iconComponents = {
+  FaGift, 
+  FaHandshake, 
+  FaPiggyBank, 
+  FaCreditCard,
+  FaShieldAlt,
+  FaChartPie,
+  FaUserFriends
+  }
 
-  const additionalServices = [
-    {
-      id: 1,
-      title: "Investment Accounts",
-      description: "Start investing with as little as $100",
-      icon: <FaPiggyBank />
-    },
-    {
-      id: 2,
-      title: "Insurance Products",
-      description: "Life, home, and auto insurance options",
-      icon: <FaShieldAlt />
-    },
-    {
-      id: 3,
-      title: "Business Banking",
-      description: "Special accounts for entrepreneurs",
-      icon: <FaUserFriends />
-    }
-  ];
+  const referralProgram = Data.referralProgram;
+
+  const specialOffers = Data.specialOffers.map(e=>e);
+
+  const additionalServices = Data.additionalServices.map(e=>e);
 
   return (
     <div className="others-container">
@@ -111,10 +73,12 @@ export default function Others() {
           <h3>Special Offers</h3>
         </div>
         <div className="offers-grid">
-          {specialOffers.map(offer => (
+          {specialOffers.map(offer => {
+            const Icon = iconComponents[offer.icon]
+          return(
             <div key={offer.id} className="offer-card">
               <div className="offer-icon" style={{ color: '#d44a4a' }}>
-                {offer.icon}
+                <Icon />
               </div>
               <div className="offer-content">
                 <h4>{offer.title}</h4>
@@ -122,7 +86,7 @@ export default function Others() {
                 <button className="offer-btn">Learn More</button>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
 
@@ -133,16 +97,18 @@ export default function Others() {
           <h3>Additional Financial Services</h3>
         </div>
         <div className="services-grid">
-          {additionalServices.map(service => (
+          {additionalServices.map(service => {
+            const Icon = iconComponents[service.icon]
+          return(
             <div key={service.id} className="service-card">
               <div className="service-icon">
-                {service.icon}
+                <Icon />
               </div>
               <h4>{service.title}</h4>
               <p>{service.description}</p>
               <button className="service-btn">Explore</button>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </div>

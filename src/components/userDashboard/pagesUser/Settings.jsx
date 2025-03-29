@@ -10,6 +10,7 @@ import {
   FaChevronUp
 } from 'react-icons/fa';
 import './Settings.css';
+import Data from '../../data/pagesUserData/data.json'
 
 export default function Settings() {
   // State for expanded sections
@@ -21,18 +22,10 @@ export default function Settings() {
   });
 
   // Sample data for linked accounts
-  const linkedAccounts = [
-    { id: 1, bank: 'Chase', accountNumber: '****4567', status: 'verified' },
-    { id: 2, bank: 'Bank of America', accountNumber: '****8910', status: 'pending' }
-  ];
+  const linkedAccounts = Data.linkedAccounts.map(e=>e);
 
   // Sample notification preferences
-  const notificationPrefs = [
-    { id: 1, type: 'transaction', label: 'Transaction Alerts', enabled: true },
-    { id: 2, type: 'security', label: 'Security Alerts', enabled: true },
-    { id: 3, type: 'marketing', label: 'Promotional Offers', enabled: false },
-    { id: 4, type: 'account', label: 'Account Updates', enabled: true }
-  ];
+  const notificationPrefs = Data.notificationPrefs.map(e=>e);
 
   // Toggle section expansion
   const toggleSection = (section) => {
