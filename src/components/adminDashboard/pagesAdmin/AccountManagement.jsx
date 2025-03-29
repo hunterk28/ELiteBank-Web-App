@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaSearch, FaCheck, FaTimes, FaExchangeAlt, FaLock, FaFilter } from 'react-icons/fa';
 import './AccountManagement.css';
+import Data from '../../data/pagesAdminData/data.json'
 
 export default function AccountManagement() {
   const [selectedAccount, setSelectedAccount] = useState(null);
@@ -8,63 +9,7 @@ export default function AccountManagement() {
   const [filterStatus, setFilterStatus] = useState('All');
 
   // Hardcoded account data
-  const accounts = [
-    {
-      id: 'ACC1001',
-      customer: 'John Doe (C1001)',
-      type: 'Savings',
-      balance: 1250.00,
-      openedDate: '2023-01-15',
-      status: 'Active',
-      lastActivity: '2023-08-22',
-      requestType: null,
-      notes: 'Regular customer with good history'
-    },
-    {
-      id: 'ACC1002',
-      customer: 'Sarah Lee (C1002)',
-      type: 'Checking',
-      balance: 3500.00,
-      openedDate: '2022-11-05',
-      status: 'Active',
-      lastActivity: '2023-08-20',
-      requestType: null,
-      notes: 'Business account'
-    },
-    {
-      id: 'ACC1003',
-      customer: 'Michael Brown (C1003)',
-      type: 'Savings',
-      balance: 0.00,
-      openedDate: '2023-08-10',
-      status: 'Pending',
-      lastActivity: null,
-      requestType: 'New Account',
-      notes: 'Requires verification'
-    },
-    {
-      id: 'ACC1004',
-      customer: 'Emma Wilson (C1004)',
-      type: 'Business',
-      balance: 0.00,
-      openedDate: '2023-08-18',
-      status: 'Pending',
-      lastActivity: null,
-      requestType: 'Upgrade to Premium',
-      notes: 'High net worth individual'
-    },
-    {
-      id: 'ACC1005',
-      customer: 'David Johnson (C1005)',
-      type: 'Checking',
-      balance: 0.00,
-      openedDate: '2021-05-22',
-      status: 'Suspended',
-      lastActivity: '2023-06-15',
-      requestType: null,
-      notes: 'Fraud investigation pending'
-    }
-  ];
+  const accounts = Data.accounts.map((e)=>e);
 
   return (
     <div className="account-management">

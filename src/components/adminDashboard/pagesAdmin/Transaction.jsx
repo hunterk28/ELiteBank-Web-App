@@ -1,40 +1,12 @@
 import React, { useState } from 'react';
 import { FaSearch, FaFilter, FaFileExport, FaCheckCircle, FaTimesCircle, FaReceipt, FaMoneyBillWave, FaExchangeAlt, FaCalendarAlt, FaInfoCircle } from 'react-icons/fa';
 import './Transaction.css';
+import Data from '../../data/pagesAdminData/data.json'
 
 export default function TransactionManagement() {
   const [selectedTransaction, setSelectedTransaction] = useState(null);
   
-  const transactions = [
-    {
-      id: 'TX1001',
-      account: '1001 (John Doe)',
-      type: 'Wire Transfer',
-      amount: 1250.00,
-      date: '08/22/2023 14:30',
-      status: 'Pending',
-      riskLevel: 'High',
-      fromAccount: 'Savings (****3456)',
-      toAccount: 'External Account (****7890)',
-      reference: 'INV-2023-001',
-      location: 'Online',
-      initiatedBy: 'Customer'
-    },
-    {
-      id: 'TX1002',
-      account: '1002 (Sarah Lee)',
-      type: 'ATM Withdrawal',
-      amount: 500.00,
-      date: '08/22/2023 10:15',
-      status: 'Completed',
-      riskLevel: 'Medium',
-      fromAccount: 'Checking (****2345)',
-      toAccount: 'Cash',
-      reference: 'ATM-456789',
-      location: 'ATM #1234, Main St',
-      initiatedBy: 'Customer'
-    }
-  ];
+  const transactions = Data.transactions.map((e)=>e);
 
   return (
     <div className="transaction-management">
@@ -51,6 +23,7 @@ export default function TransactionManagement() {
               <select>
                 <option>All</option>
                 <option>Pending</option>
+                <option>Completed</option>
               </select>
             </div>
             <button className="export-btn">

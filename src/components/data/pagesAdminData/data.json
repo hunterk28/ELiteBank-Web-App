@@ -1,0 +1,505 @@
+{
+    "balanceData" : [
+        { 
+            "id":1,
+            "date": "16/08", 
+            "balance": 3500
+        },
+        { 
+            "id":2,
+            "date": "17/08", 
+            "balance": 15200 
+        },
+        { 
+            "id":3,
+            "date": "18/08", 
+            "balance": 4000
+        },
+        { 
+            "id":4,
+            "date": "19/08", 
+            "balance": 15550 
+        },
+        { 
+            "id":5,
+            "date": "20/08", 
+            "balance": 15630 
+        },
+        { 
+            "id":6,
+            "date": "21/08", 
+            "balance": 4500
+        },
+        { 
+            "id":7,
+            "date": "22/08", 
+            "balance": 15900 
+        },
+        { 
+            "id":8,
+            "date": "23/08", 
+            "balance": 16000 
+        }
+      ],
+      "transactionData": [
+        { 
+            "id": 1,
+            "name": "Jan",
+            "deposits": 4000,
+            "withdrawals": 2400 
+        },
+        { 
+            "id": 2,
+            "name": "Feb", 
+            "deposits": 3000,
+            "withdrawals": 1398 
+        },
+        {
+            "id": 3, 
+            "name": "Mar", 
+            "deposits": 2000, 
+            "withdrawals": 9800 
+        },
+        { 
+            "id": 4,
+            "name": "Apr", 
+            "deposits": 2780, 
+            "withdrawals": 3908 
+        },
+        { 
+            "id": 5,
+            "name": "May", 
+            "deposits": 1890, 
+            "withdrawals": 4800 
+        },
+        { 
+            "id": 6,
+            "name": "Jun", 
+            "deposits": 2390, 
+            "withdrawals": 3800 
+        },
+        { 
+            "id": 7,
+            "name": "Jul", 
+            "deposits": 3490, 
+            "withdrawals": 4300 
+        }
+    ],
+    "summaryStats" : [
+        {
+          "id": 1,
+          "icon": "FaDollarSign",
+          "title": "Total Assets",
+          "info": "$ 12,850,000"
+        },
+        {
+          "id": 2,
+          "icon": "FaUsers",
+          "title": "Active Customers",
+          "info": 8742
+        },
+        {
+          "id": 3,
+          "icon": "FaExchangeAlt",
+          "title": "Today's Transactions",
+          "info": 1284
+        }
+      ],
+      "quickStats": [
+        {
+        "id": 1,
+        "icon": "FaDollarSign",
+        "title": "Total Deposits",
+        "value": "$2,450,000",
+        "trend": "up",
+        "description": "+12.5% from last month"
+        },
+        {
+        "id": 2,
+        "icon": "FaCreditCard",
+        "title": "Active Loans",
+        "value": 1284,
+        "trend": "neutral",
+        "description": "$48,750,000 total"
+        },
+        {
+        "id": 3,
+        "icon": "FaFileInvoiceDollar",
+        "title": "Pending Approvals",
+        "value": 47,
+        "trend": "down",
+        "description": "+8 since yesterday"
+        },
+        {
+        "id": 4,
+        "icon": "FaShieldAlt",
+        "title": "Fraud Alerts",
+        "value": 12,
+        "trend": "critical",
+        "description": "Require immediate attention"
+        }
+    ],
+    "recentTransactions": [
+    {
+      "id": 1,
+      "time": "09:30 AM",
+      "account": {
+        "number": "1001",
+        "holder": "John Doe"
+      },
+      "type": "Deposit",
+      "amount": 1500.00,
+      "amountType": "positive",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "time": "10:00 AM",
+      "account": {
+        "number": "1002",
+        "holder": "Sarah Lee"
+      },
+      "type": "Loan Payment",
+      "amount": 800.00,
+      "amountType": "positive",
+      "status": "completed"
+    },
+    {
+      "id": 3,
+      "time": "12:00 PM",
+      "account": {
+        "number": "1003",
+        "holder": "Mike Brown"
+      },
+      "type": "Bill Payment",
+      "amount": -120.00,
+      "amountType": "negative",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "time": "02:30 PM",
+      "account": {
+        "number": "1004",
+        "holder": "Emily Davis"
+      },
+      "type": "ATM Withdrawal",
+      "amount": -300.00,
+      "amountType": "negative",
+      "status": "completed"
+    },
+    {
+      "id": 5,
+      "time": "04:15 PM",
+      "account": {
+        "number": "1005",
+        "holder": "Robert Wilson"
+      },
+      "type": "Wire Transfer",
+      "amount": -1250.00,
+      "amountType": "negative",
+      "status": "failed"
+    }
+  ],
+  "customerAccounts": {
+    "total": 8742,
+    "currentPage": 1,
+    "perPage": 4,
+    "data": [
+      {
+        "id": 1,
+        "accountNumber": "1001",
+        "holderName": "John Doe",
+        "type": "Premium Savings",
+        "openDate": "12/05/2018",
+        "status": "active",
+        "balance": 15200.00,
+        "actions": ["view", "edit"]
+      },
+      {
+        "id": 2,
+        "accountNumber": "1002",
+        "holderName": "Sarah Lee",
+        "type": "Business Checking",
+        "openDate": "03/11/2020",
+        "status": "inactive",
+        "balance": 2300.00,
+        "actions": ["view", "edit"]
+      },
+      {
+        "id": 3,
+        "accountNumber": "1003",
+        "holderName": "Michael Brown",
+        "type": "Student Account",
+        "openDate": "08/22/2021",
+        "status": "active",
+        "balance": 850.50,
+        "actions": ["view", "edit"]
+      },
+      {
+        "id": 4,
+        "accountNumber": "1004",
+        "holderName": "Emily Davis",
+        "type": "Gold Checking",
+        "openDate": "05/15/2019",
+        "status": "active",
+        "balance": 24750.00,
+        "actions": ["view", "edit"]
+      }
+    ]
+  },
+  "transactions": [
+    {
+      "id": "TX1001",
+      "account": "1001 (John Doe)",
+      "type": "Wire Transfer",
+      "amount": 1250.00,
+      "date": "08/22/2023 14:30",
+      "status": "Pending",
+      "riskLevel": "High",
+      "fromAccount": "Savings (****3456)",
+      "toAccount": "External Account (****7890)",
+      "reference": "INV-2023-001",
+      "location": "Online",
+      "initiatedBy": "Customer"
+    },
+    {
+      "id": "TX1002",
+      "account": "1002 (Sarah Lee)",
+      "type": "ATM Withdrawal",
+      "amount": 500.00,
+      "date": "08/22/2023 10:15",
+      "status": "Completed",
+      "riskLevel": "Medium",
+      "fromAccount": "Checking (****2345)",
+      "toAccount": "Cash",
+      "reference": "ATM-456789",
+      "location": "ATM #1234, Main St",
+      "initiatedBy": "Customer"
+    }
+  ],
+  "customers": [
+    {
+      "id": "C1001",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1 (555) 123-4567",
+      "status": "Active",
+      "tier": "Premium",
+      "accounts": ["Savings (****3456)"],
+      "lastLogin": "2023-08-22"
+    },
+    {
+      "id": "C1002",
+      "name": "Sarah Lee",
+      "email": "sarah.lee@example.com",
+      "phone": "+1 (555) 987-6543",
+      "status": "Inactive",
+      "tier": "Standard",
+      "accounts": ["Savings (****2345)"],
+      "lastLogin": "2023-08-10"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "ACC1001",
+      "customer": "John Doe (C1001)",
+      "type": "Savings",
+      "balance": 1250.00,
+      "openedDate": "2023-01-15",
+      "status": "Active",
+      "lastActivity": "2023-08-22",
+      "requestType": null,
+      "notes": "Regular customer with good history"
+    },
+    {
+      "id": "ACC1002",
+      "customer": "Sarah Lee (C1002)",
+      "type": "Checking",
+      "balance": 3500.00,
+      "openedDate": "2022-11-05",
+      "status": "Active",
+      "lastActivity": "2023-08-20",
+      "requestType": null,
+      "notes": "Business account"
+    },
+    {
+      "id": "ACC1003",
+      "customer": "Michael Brown (C1003)",
+      "type": "Savings",
+      "balance": 0.00,
+      "openedDate": "2023-08-10",
+      "status": "Pending",
+      "lastActivity": null,
+      "requestType": "New Account",
+      "notes": "Requires verification"
+    },
+    {
+      "id": "ACC1004",
+      "customer": "Emma Wilson (C1004)",
+      "type": "Business",
+      "balance": 0.00,
+      "openedDate": "2023-08-18",
+      "status": "Pending",
+      "lastActivity": null,
+      "requestType": "Upgrade to Premium",
+      "notes": "High net worth individual"
+    },
+    {
+      "id": "ACC1005",
+      "customer": "David Johnson (C1005)",
+      "type": "Checking",
+      "balance": 0.00,
+      "openedDate": "2021-05-22",
+      "status": "Suspended",
+      "lastActivity": "2023-06-15",
+      "requestType": null,
+      "notes": "Fraud investigation pending"
+    }
+  ],
+  "loanApplications": [
+    {
+      "id": "LN2023001",
+      "customer": "John Doe (C1001)",
+      "type": "Personal Loan",
+      "amount": 15000,
+      "term": "36 months",
+      "interestRate": "8.5%",
+      "status": "Pending",
+      "applicationDate": "2023-08-15",
+      "purpose": "Home renovation",
+      "creditScore": 720
+    },
+    {
+      "id": "LN2023002",
+      "customer": "Sarah Lee (C1002)",
+      "type": "Business Loan",
+      "amount": 50000,
+      "term": "60 months",
+      "interestRate": "6.9%",
+      "status": "Pending",
+      "applicationDate": "2023-08-18",
+      "purpose": "Business expansion",
+      "creditScore": 680
+    }
+  ],
+  "activeLoans": [
+    {
+      "id": "LN2023003",
+      "customer": "Michael Brown (C1003)",
+      "type": "Auto Loan",
+      "amount": 25000,
+      "term": "48 months",
+      "interestRate": "5.5%",
+      "status": "Active",
+      "disbursementDate": "2023-07-01",
+      "nextPaymentDate": "2023-09-01",
+      "paymentStatus": "Current",
+      "remainingBalance": 247500
+    }
+  ],
+  "loanPolicies": [
+    {
+      "id": "POL001",
+      "loanType": "Personal Loan",
+      "minAmount": 1000,
+      "maxAmount": 50000,
+      "minTerm": "12 months",
+      "maxTerm": "60 months",
+      "baseRate": "6.5%",
+      "ltvRatio": "N/A"
+    }
+  ],
+  "savingsRates": [
+    {
+      "id": "SAV001",
+      "accountType": "Basic Savings",
+      "baseRate": 1.5,
+      "bonusRate": 0.5,
+      "bonusCondition": "Balance > $10,000",
+      "minBalance": 100,
+      "calculationMethod": "Daily compounding"
+    },
+    {
+      "id": "SAV002",
+      "accountType": "Premium Savings",
+      "baseRate": 2.25,
+      "bonusRate": 1.0,
+      "bonusCondition": "Balance > $25,000",
+      "minBalance": 1000,
+      "calculationMethod": "Monthly compounding"
+    }
+  ],
+  "loanRates": [
+    {
+      "id": "LOAN001",
+      "loanType": "Personal Loan",
+      "baseRate": 8.5,
+      "riskAdjustment": "+2% for credit score < 650",
+      "maxRate": 15.0,
+      "minTerm": "12 months",
+      "calculationMethod": "Simple interest"
+    },
+    {
+      "id": "LOAN002",
+      "loanType": "Mortgage",
+      "baseRate": 4.25,
+      "riskAdjustment": "+0.5% per 50 points below 700",
+      "maxRate": 7.5,
+      "minTerm": "60 months",
+      "calculationMethod": "Amortized"
+    }
+  ],
+  "feeStructures": [
+    {
+      "id": "FEE001",
+      "feeType": "Late Payment",
+      "feeName": "Loan Late Fee",
+      "amount": "5% of payment or $25 (whichever is greater)",
+      "gracePeriod": "15 days",
+      "appliesTo": "All loan products"
+    },
+    {
+      "id": "FEE002",
+      "feeType": "Account Maintenance",
+      "feeName": "Monthly Service Fee",
+      "amount": "$10",
+      "gracePeriod": "N/A",
+      "appliesTo": "Basic Checking accounts"
+    }
+  ],
+  "customersReport": [
+    {
+      "id": "C1001",
+      "name": "John Doe",
+      "account": "1001 (Savings)"
+    },
+    {
+      "id": "C1002",
+      "name": "Sarah Lee",
+      "account": "1002 (Checking)"
+    },
+    {
+      "id": "C1003",
+      "name": "Michael Brown",
+      "account": "1003 (Business)"
+    }
+  ],
+  "reportTypes": [
+    {
+      "id": "R001",
+      "name": "Transaction History",
+      "description": "Detailed transaction records"
+    },
+    {
+      "id": "R002",
+      "name": "Account Summary",
+      "description": "Monthly account summary"
+    },
+    {
+      "id": "R003",
+      "name": "Interest Calculation",
+      "description": "Interest earned/paid report"
+    }
+  ]
+}

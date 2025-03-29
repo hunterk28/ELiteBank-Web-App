@@ -11,6 +11,7 @@ import {
   FaPlus
 } from 'react-icons/fa';
 import './LoanManagement.css';
+import Data from '../../data/pagesAdminData/data.json'
 
 export default function LoanManagement() {
   const [selectedLoan, setSelectedLoan] = useState(null);
@@ -19,61 +20,11 @@ export default function LoanManagement() {
   const [activeTab, setActiveTab] = useState('applications');
 
   // Hardcoded loan data
-  const loanApplications = [
-    {
-      id: 'LN2023001',
-      customer: 'John Doe (C1001)',
-      type: 'Personal Loan',
-      amount: 15000,
-      term: '36 months',
-      interestRate: '8.5%',
-      status: 'Pending',
-      applicationDate: '2023-08-15',
-      purpose: 'Home renovation',
-      creditScore: 720
-    },
-    {
-      id: 'LN2023002',
-      customer: 'Sarah Lee (C1002)',
-      type: 'Business Loan',
-      amount: 50000,
-      term: '60 months',
-      interestRate: '6.9%',
-      status: 'Pending',
-      applicationDate: '2023-08-18',
-      purpose: 'Business expansion',
-      creditScore: 680
-    }
-  ];
+  const loanApplications = Data.loanApplications.map((e)=>e);
 
-  const activeLoans = [
-    {
-      id: 'LN2023003',
-      customer: 'Michael Brown (C1003)',
-      type: 'Auto Loan',
-      amount: 25000,
-      term: '48 months',
-      interestRate: '5.5%',
-      status: 'Active',
-      disbursementDate: '2023-07-01',
-      nextPaymentDate: '2023-09-01',
-      paymentStatus: 'Current',
-      remainingBalance: 247500
-    }
-  ];
+  const activeLoans = Data.activeLoans.map((e)=>e);
 
-  const loanPolicies = [
-    {
-      id: 'POL001',
-      loanType: 'Personal Loan',
-      minAmount: 1000,
-      maxAmount: 50000,
-      minTerm: '12 months',
-      maxTerm: '60 months',
-      baseRate: '6.5%',
-      ltvRatio: 'N/A'
-    }
-  ];
+  const loanPolicies = Data.loanPolicies.map((e)=>e);
 
   return (
     <div className="loan-management">

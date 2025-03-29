@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaSearch, FaFilePdf, FaFileCsv, FaFileAlt, FaCalendarAlt, FaUser, FaFilter, FaDownload } from 'react-icons/fa';
 import './ReportManagement.css';
+import Data from '../../data/pagesAdminData/data.json'
 
 export default function ReportManagement() {
   const [activeTab, setActiveTab] = useState('statements');
@@ -11,17 +12,9 @@ export default function ReportManagement() {
   });
 
   // Hardcoded data for demonstration
-  const customers = [
-    { id: 'C1001', name: 'John Doe', account: '1001 (Savings)' },
-    { id: 'C1002', name: 'Sarah Lee', account: '1002 (Checking)' },
-    { id: 'C1003', name: 'Michael Brown', account: '1003 (Business)' }
-  ];
+  const customers = Data.customersReport.map((e)=>e);
 
-  const reportTypes = [
-    { id: 'R001', name: 'Transaction History', description: 'Detailed transaction records' },
-    { id: 'R002', name: 'Account Summary', description: 'Monthly account summary' },
-    { id: 'R003', name: 'Interest Calculation', description: 'Interest earned/paid report' }
-  ];
+  const reportTypes = Data.reportTypes.map((e)=>e);
 
   const handleGenerateReport = (type) => {
     // In a real implementation, this would trigger report generation

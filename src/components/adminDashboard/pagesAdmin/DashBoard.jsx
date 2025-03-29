@@ -2,26 +2,17 @@ import React from "react";
 import { FaDollarSign, FaChartLine, FaUsers, FaExchangeAlt, FaCreditCard, FaFileInvoiceDollar, FaShieldAlt } from "react-icons/fa";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import './DashBoard.css';
+import Data from '../../data/pagesAdminData/data.json'
+import StatCard from "../../common/StatCard";
+import QuickStatCard from "../../common/QuickStatCard";
+import Table from '../../common/Table';
+import TableCostumerAccounts from '../../common/TableCostumerAccounts'
 
-const balanceData = [
-  { date: "16/08", balance: 15000 },
-  { date: "17/08", balance: 15200 },
-  { date: "18/08", balance: 15450 },
-  { date: "19/08", balance: 15100 },
-  { date: "20/08", balance: 15500 },
-  { date: "21/08", balance: 15700 },
-  { date: "22/08", balance: 16000 },
-];
+const iconComponents = { FaDollarSign, FaChartLine, FaUsers, FaExchangeAlt, FaCreditCard, FaFileInvoiceDollar, FaShieldAlt };
 
-const transactionData = [
-  { name: 'Jan', deposits: 4000, withdrawals: 2400 },
-  { name: 'Feb', deposits: 3000, withdrawals: 1398 },
-  { name: 'Mar', deposits: 2000, withdrawals: 9800 },
-  { name: 'Apr', deposits: 2780, withdrawals: 3908 },
-  { name: 'May', deposits: 1890, withdrawals: 4800 },
-  { name: 'Jun', deposits: 2390, withdrawals: 3800 },
-  { name: 'Jul', deposits: 3490, withdrawals: 4300 },
-];
+const balanceData = Data.balanceData.map((e)=>e);
+
+const transactionData = Data.transactionData.map((e)=>e);
 
 export default function DashboardOverview () {
   return (
@@ -30,27 +21,19 @@ export default function DashboardOverview () {
       <div className="dashboard-header">
         <h1>Bank Administrator Dashboard</h1>
         <div className="header-stats">
-          <div className="stat-item">
-            <FaDollarSign className="stat-icon" />
-            <div>
-              <span>Total Assets</span>
-              <h3>$12,850,000</h3>
-            </div>
-          </div>
-          <div className="stat-item">
-            <FaUsers className="stat-icon" />
-            <div>
-              <span>Active Customers</span>
-              <h3>8,742</h3>
-            </div>
-          </div>
-          <div className="stat-item">
-            <FaExchangeAlt className="stat-icon" />
-            <div>
-              <span>Today's Transactions</span>
-              <h3>1,284</h3>
-            </div>
-          </div>
+          {  Data.summaryStats.map((stat) => {
+              const Icon = iconComponents[stat.icon];
+              return (
+                <div key={stat.id} className="stat-item">
+                <StatCard 
+                  icon={Icon}
+                  title={stat.title}
+                  info={stat.info}
+                />
+                </div>
+              )
+            })
+          }
         </div>
       </div>
 
@@ -117,45 +100,19 @@ export default function DashboardOverview () {
         </div>
 
         {/* Quick Stats */}
-            <div className="dashboard-card small">
-            <div className="card-header">
-                <h3><FaDollarSign /> Total Deposits</h3>
-            </div>
-            <div className="card-content">
-                <h2>$2,450,000</h2>
-                <span className="stat-up">+12.5% from last month</span>
-            </div>
-            </div>
-
-            <div className="dashboard-card small">
-            <div className="card-header">
-                <h3><FaCreditCard /> Active Loans</h3>
-            </div>
-            <div className="card-content">
-                <h2>1,284</h2>
-                <span className="stat-neutral">$48,750,000 total</span>
-            </div>
-            </div>
-
-            <div className="dashboard-card small">
-            <div className="card-header">
-                <h3><FaFileInvoiceDollar /> Pending Approvals</h3>
-            </div>
-            <div className="card-content">
-                <h2>47</h2>
-                <span className="stat-down">+8 since yesterday</span>
-            </div>
-            </div>
-
-            <div className="dashboard-card small">
-            <div className="card-header">
-                <h3><FaShieldAlt /> Fraud Alerts</h3>
-            </div>
-            <div className="card-content">
-                <h2>12</h2>
-                <span className="stat-critical">Require immediate attention</span>
-            </div>
-            </div>
+            {Data.quickStats?.map((stat)=>{
+              const icon = iconComponents[stat.icon]
+              return(
+                <QuickStatCard 
+                  key={stat.id}
+                  icon={icon}
+                  title={stat.title}
+                  trend={stat.trend}
+                  value={stat.value}
+                  description={stat.description}
+                />
+              )
+            })}
 
         {/* Recent Transactions */}
         <div className="dashboard-card medium1">
@@ -164,7 +121,7 @@ export default function DashboardOverview () {
             <button className="view-all-btn">View All</button>
           </div>
           <div className="transactions-table">
-            <table>
+          <table>
               <thead>
                 <tr>
                   <th>Time</th>
@@ -175,43 +132,21 @@ export default function DashboardOverview () {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>09:30 AM</td>
-                  <td>1001 (John Doe)</td>
-                  <td>Deposit</td>
-                  <td className="amount-positive">+$1,500.00</td>
-                  <td className="status-completed">Completed</td>
-                </tr>
-                <tr>
-                  <td>10:00 AM</td>
-                  <td>1002 (Sarah Lee)</td>
-                  <td>Loan Payment</td>
-                  <td className="amount-positive">+$800.00</td>
-                  <td className="status-completed">Completed</td>
-                </tr>
-                <tr>
-                  <td>12:00 PM</td>
-                  <td>1003 (Mike Brown)</td>
-                  <td>Bill Payment</td>
-                  <td className="amount-negative">-$120.00</td>
-                  <td className="status-pending">Pending</td>
-                </tr>
-                <tr>
-                  <td>02:30 PM</td>
-                  <td>1004 (Emily Davis)</td>
-                  <td>ATM Withdrawal</td>
-                  <td className="amount-negative">-$300.00</td>
-                  <td className="status-completed">Completed</td>
-                </tr>
-                <tr>
-                  <td>04:15 PM</td>
-                  <td>1005 (Robert Wilson)</td>
-                  <td>Wire Transfer</td>
-                  <td className="amount-negative">-$1,250.00</td>
-                  <td className="status-failed">Failed</td>
-                </tr>
+                {
+                  Data.recentTransactions?.map((e) => 
+                    <Table 
+                      key={e.id}
+                      time={e.time}
+                      account={e.account}
+                      type={e.type}
+                      amount={e.amount}
+                      amountType={e.amountType}
+                      status={e.status}
+                    />
+                  )
+                }
               </tbody>
-            </table>
+            </table>  
           </div>
         </div>
 
@@ -238,62 +173,27 @@ export default function DashboardOverview () {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1001</td>
-                  <td>John Doe</td>
-                  <td>Premium Savings</td>
-                  <td>12/05/2018</td>
-                  <td className="status-active">Active</td>
-                  <td>$15,200.00</td>
-                  <td>
-                    <button className="action-btn view">View</button>
-                    <button className="action-btn edit">Edit</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1002</td>
-                  <td>Sarah Lee</td>
-                  <td>Business Checking</td>
-                  <td>03/11/2020</td>
-                  <td className="status-inactive">Inactive</td>
-                  <td>$2,300.00</td>
-                  <td>
-                    <button className="action-btn view">View</button>
-                    <button className="action-btn edit">Edit</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1003</td>
-                  <td>Michael Brown</td>
-                  <td>Student Account</td>
-                  <td>08/22/2021</td>
-                  <td className="status-active">Active</td>
-                  <td>$850.50</td>
-                  <td>
-                    <button className="action-btn view">View</button>
-                    <button className="action-btn edit">Edit</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1004</td>
-                  <td>Emily Davis</td>
-                  <td>Gold Checking</td>
-                  <td>05/15/2019</td>
-                  <td className="status-active">Active</td>
-                  <td>$24,750.00</td>
-                  <td>
-                    <button className="action-btn view">View</button>
-                    <button className="action-btn edit">Edit</button>
-                  </td>
-                </tr>
+              {
+                  Data.customerAccounts?.data?.map((e) => 
+                    <TableCostumerAccounts 
+                      key={e.id}
+                      accountNumber={e.accountNumber}
+                      holderName={e.holderName}
+                      type={e.type}
+                      openDate={e.openDate}
+                      status={e.status}
+                      balance={e.balance}
+                    />
+                  )
+                }
               </tbody>
             </table>
           </div>
           <div className="table-footer">
-            <span>Showing 4 of 8,742 accounts</span>
+            <span>{`Showing ${Data.customerAccounts.perPage} of ${Data.customerAccounts.total} accounts`}</span>
             <div className="pagination">
               <button disabled>Previous</button>
-              <button className="active">1</button>
+              <button className="active">{Data.customerAccounts.currentPage}</button>
               <button>2</button>
               <button>3</button>
               <button>Next</button>

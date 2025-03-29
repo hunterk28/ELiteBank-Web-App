@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaSearch, FaEdit, FaSave, FaPercentage, FaMoneyBillWave, FaCalendarAlt, FaExclamationTriangle } from 'react-icons/fa';
 import './InterestManagement.css';
+import Data from '../../data/pagesAdminData/data.json'
 
 export default function InterestManagement() {
   const [activeTab, setActiveTab] = useState('savings');
@@ -8,66 +9,11 @@ export default function InterestManagement() {
   const [tempValues, setTempValues] = useState({});
   
   // Hardcoded interest and fee data
-  const savingsRates = [
-    {
-      id: 'SAV001',
-      accountType: 'Basic Savings',
-      baseRate: 1.5,
-      bonusRate: 0.5,
-      bonusCondition: 'Balance > $10,000',
-      minBalance: 100,
-      calculationMethod: 'Daily compounding'
-    },
-    {
-      id: 'SAV002',
-      accountType: 'Premium Savings',
-      baseRate: 2.25,
-      bonusRate: 1.0,
-      bonusCondition: 'Balance > $25,000',
-      minBalance: 1000,
-      calculationMethod: 'Monthly compounding'
-    }
-  ];
+  const savingsRates = Data.savingsRates.map((e)=>e);
 
-  const loanRates = [
-    {
-      id: 'LOAN001',
-      loanType: 'Personal Loan',
-      baseRate: 8.5,
-      riskAdjustment: '+2% for credit score < 650',
-      maxRate: 15.0,
-      minTerm: '12 months',
-      calculationMethod: 'Simple interest'
-    },
-    {
-      id: 'LOAN002',
-      loanType: 'Mortgage',
-      baseRate: 4.25,
-      riskAdjustment: '+0.5% per 50 points below 700',
-      maxRate: 7.5,
-      minTerm: '60 months',
-      calculationMethod: 'Amortized'
-    }
-  ];
+  const loanRates = Data.loanRates.map((e)=>e);
 
-  const feeStructures = [
-    {
-      id: 'FEE001',
-      feeType: 'Late Payment',
-      feeName: 'Loan Late Fee',
-      amount: '5% of payment or $25 (whichever is greater)',
-      gracePeriod: '15 days',
-      appliesTo: 'All loan products'
-    },
-    {
-      id: 'FEE002',
-      feeType: 'Account Maintenance',
-      feeName: 'Monthly Service Fee',
-      amount: '$10',
-      gracePeriod: 'N/A',
-      appliesTo: 'Basic Checking accounts'
-    }
-  ];
+  const feeStructures = Data.feeStructures.map((e)=>e);
 
   const handleEdit = (id, field, value) => {
     setEditing(id);

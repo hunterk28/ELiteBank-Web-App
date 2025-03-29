@@ -1,32 +1,12 @@
 import React, { useState } from 'react';
 import { FaSearch, FaUserPlus, FaEdit, FaTrash, FaLock, FaUnlock, FaIdCard, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import './CostumerManagement.css'
+import Data from '../../data/pagesAdminData/data.json'
 
 export default function CustomerManagement() {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   
-  const customers = [
-    {
-      id: 'C1001',
-      name: 'John Doe',
-      email: 'john.doe@example.com',
-      phone: '+1 (555) 123-4567',
-      status: 'Active',
-      tier: 'Premium',
-      accounts: ['Savings (****3456)'],
-      lastLogin: '2023-08-22'
-    },
-    {
-      id: 'C1002',
-      name: 'Sarah Lee',
-      email: 'sarah.lee@example.com',
-      phone: '+1 (555) 987-6543',
-      status: 'Inactive',
-      tier: 'Standard',
-      accounts: ['Savings (****2345)'],
-      lastLogin: '2023-08-10'
-    }
-  ];
+  const customers = Data.customers.map((e)=>e);
 
   return (
     <div className="customer-management">
