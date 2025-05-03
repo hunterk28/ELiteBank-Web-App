@@ -40,6 +40,7 @@ export default function SignUp({ closeModal, openLogin }) {
             if (data.success) {
                 setIsLoggedin(true);
                 getUserData()
+                closeModal();
                 navigate('/');
             } else {
                 toast.error(data.message);  // Data message on failure

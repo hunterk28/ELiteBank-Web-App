@@ -8,15 +8,126 @@ import {
   FaPrint
 } from 'react-icons/fa';
 import './Report.css';
-import Data from '../../data/pagesUserData/data.json'
+import Data from '../../data/pagesUserData/data.json';
+import { jsPDF } from 'jspdf';
 
 export default function Reports() {
-  // Sample report data (static for frontend)
-  const monthlySummaries = Data.monthlySummaries.map(e=>e);
+  const monthlySummaries = Data.monthlySummaries.map(e => e);
+  const interestReports = Data.interestReports.map(e => e);
+  const loanStatements = Data.loanStatements.map(e => e);
 
-  const interestReports = Data.interestReports.map(e=>e);
+  // CSV Export function
+  const exportToCSV = (data, headers, filename) => {
+    const csvRows = [];
+    // Add headers
+    csvRows.push(headers.join(','));
 
-  const loanStatements = Data.loanStatements.map(e=>e);
+    // Add data rows
+    data.forEach(row => {
+      const rowValues = headers.map(header => {
+        if (row[header] !== undefined) return row[header];
+        return '';
+      });
+      csvRows.push(rowValues.join(','));
+    });
+
+    // Create CSV file and trigger download
+    const csvData = new Blob([csvRows.join('\n')], { type: 'text/csv' });
+    const csvUrl = URL.createObjectURL(csvData);
+    const link = document.createElement('a');
+    link.href = csvUrl;
+    link.download = filename;
+    link.click();
+  };
+
+  // PDF Export function
+  const exportToPDF = (title, content) => {
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text(title, 20, 20);
+    doc.setFontSize(12);
+    doc.text(content, 20, 40);
+    doc.save(`${title}.pdf`);
+  };
+
+  // Export Monthly Account Summaries to CSV
+  const handleMonthlySummaryCSV = () => {
+    const headers = ['Month', 'Income', 'Expenses', 'Net Amount'];
+    const data = monthlySummaries.map(report => ({
+      Month: report.month,
+      Income: `$${report.income.toFixed(2)}`,
+      Expenses: `$${report.expenses.toFixed(2)}`,
+      'Net Amount': `$${report.net.toFixed(2)}`
+    }));
+    exportToCSV(data, headers, 'Monthly_Summary.csv');
+  };
+
+  // Export Interest Reports to CSV
+  const handleInterestReportsCSV = () => {
+    const headers = ['Account', 'Type', 'Amount', 'Period'];
+    const data = interestReports.map(report => ({
+      Account: report.account,
+      Type: report.type,
+      Amount: `$${report.amount.toFixed(2)}`,
+      Period: report.period
+    }));
+    exportToCSV(data, headers, 'Interest_Reports.csv');
+  };
+
+  // Export Monthly Account Summaries to PDF
+  const handleMonthlySummaryPDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text('Monthly Account Summaries', 20, 20);
+
+    // Loop through monthly summaries and add them to the PDF
+    monthlySummaries.forEach((summary, index) => {
+      const yPosition = 30 + (index * 20);
+      doc.setFontSize(12);
+      doc.text(`Month: ${summary.month}`, 20, yPosition);
+      doc.text(`Income: $${summary.income.toFixed(2)}`, 20, yPosition + 10);
+      doc.text(`Expenses: $${summary.expenses.toFixed(2)}`, 20, yPosition + 20);
+      doc.text(`Net: $${summary.net.toFixed(2)}`, 20, yPosition + 30);
+    });
+
+    doc.save('Monthly_Summaries.pdf');
+  };
+
+  // Export Interest Reports to PDF
+  const handleInterestReportsPDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text('Interest Reports', 20, 20);
+
+    // Add table headers
+    doc.setFontSize(12);
+    doc.text('Account', 20, 30);
+    doc.text('Type', 60, 30);
+    doc.text('Amount', 100, 30);
+    doc.text('Period', 140, 30);
+
+    // Loop through interest reports and add them to the PDF
+    interestReports.forEach((report, index) => {
+      const yPosition = 40 + (index * 10);
+      doc.text(report.account, 20, yPosition);
+      doc.text(report.type, 60, yPosition);
+      doc.text(`$${report.amount.toFixed(2)}`, 100, yPosition);
+      doc.text(report.period, 140, yPosition);
+    });
+
+    doc.save('Interest_Reports.pdf');
+  };
+
+  // Export Loan Statements to PDF
+  const handleLoanStatementsPDF = () => {
+    let content = loanStatements.map(loan => `
+      Loan ID: ${loan.loanId}
+      Balance: $${loan.balance.toFixed(2)}
+      Next Payment: ${new Date(loan.nextPayment).toLocaleDateString()}
+    `).join('\n\n');
+    
+    exportToPDF('Loan Statements', content);
+  };
 
   return (
     <div className="reports-container">
@@ -36,8 +147,8 @@ export default function Reports() {
         <div className="section-header">
           <h3><FaCalendarAlt /> Monthly Account Summaries</h3>
           <div className="export-options">
-            <button className="export-btn"><FaFilePdf /> PDF</button>
-            <button className="export-btn"><FaFileCsv /> CSV</button>
+            <button className="export-btn" onClick={handleMonthlySummaryCSV}><FaFileCsv /> CSV</button>
+            <button className="export-btn" onClick={handleMonthlySummaryPDF}><FaFilePdf /> PDF</button>
             <button className="export-btn"><FaPrint /> Print</button>
           </div>
         </div>
@@ -71,8 +182,8 @@ export default function Reports() {
         <div className="section-header">
           <h3><FaMoneyBillWave /> Interest Reports</h3>
           <div className="export-options">
-            <button className="export-btn"><FaFilePdf /> PDF</button>
-            <button className="export-btn"><FaFileCsv /> CSV</button>
+            <button className="export-btn" onClick={handleInterestReportsCSV}><FaFileCsv /> CSV</button>
+            <button className="export-btn" onClick={handleInterestReportsPDF}><FaFilePdf /> PDF</button>
           </div>
         </div>
         
@@ -115,7 +226,7 @@ export default function Reports() {
         <div className="section-header">
           <h3>Loan Statements</h3>
           <div className="export-options">
-            <button className="export-btn"><FaFilePdf /> PDF</button>
+            <button className="export-btn" onClick={handleLoanStatementsPDF}><FaFilePdf /> PDF</button>
           </div>
         </div>
         
