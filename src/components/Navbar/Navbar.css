@@ -93,6 +93,107 @@
     transition: all 0.3s ease;
 }
 
+.forgot-password {
+    color: #5E191A;
+    text-align: right;
+    font-size: 14px;
+    margin-top: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.forgot-password:hover {
+    color: #4a1314;
+}
+
+/* ---- reset password ---*/
+
+.reset-password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: black;
+    padding: 20px;
+  }
+  
+  .reset-password-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .reset-password-card h2 {
+    color: #5E191A;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .reset-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    color: black;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .form-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #5E191A;
+  }
+  
+  .otp-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .submit-btn-reset {
+    background-color: #5E191A;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .submit-btn-reset:hover {
+    background-color: #4a1314;
+  }
+  
+  @media (max-width: 480px) {
+    .reset-password-card {
+      padding: 20px;
+    }
+  }
+
+
 /* --- Responsive Design for Mobile --- */
 @media (max-width: 768px) {
     .hamburger {

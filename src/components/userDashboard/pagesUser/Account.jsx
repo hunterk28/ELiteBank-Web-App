@@ -11,21 +11,19 @@ import {
 } from 'react-icons/fa';
 import './Account.css';
 import Data from '../../data/pagesUserData/data.json'
+import { useContext } from 'react';
+import AppContent from '../../context/AppContext';
 
 
 export default function Account () {
   const [isEditing, setIsEditing] = useState(false);
+
+  const {userData} = useContext(AppContent)
   
   // Sample data (replace with API calls)
   const account = Data.account
 
   const recentTransactions = Data.recentTransactions.map(e=>e);
-
-  const [user, setUser] = useState({
-    name: 'Alexandra Smith',
-    email: 'alex.smith@example.com',
-    phone: '+1 (555) 123-4567'
-  });
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -90,11 +88,11 @@ export default function Account () {
         {isEditing ? (
           <form className="profile-form" onSubmit={handleSave}>
             <div className="form-group">
-              <label>Full Name</label>
+              <label>First Name</label>
               <input 
                 type="text" 
-                value={user.name}
-                onChange={(e) => setUser({...user, name: e.target.value})}
+                value={userData.firstname}
+                //onChange={(e) => setUser({...user, name: e.target.value})}
               />
             </div>
             
@@ -102,8 +100,8 @@ export default function Account () {
               <label>Email</label>
               <input 
                 type="email" 
-                value={user.email}
-                onChange={(e) => setUser({...user, email: e.target.value})}
+                value={userData.email}
+                //onChange={(e) => setUser({...user, email: e.target.value})}
               />
             </div>
             
@@ -111,16 +109,16 @@ export default function Account () {
               <label>Phone</label>
               <input 
                 type="tel" 
-                value={user.phone}
-                onChange={(e) => setUser({...user, phone: e.target.value})}
+                value={userData.phoneno}
+                //onChange={(e) => setUser({...user, phone: e.target.value})}
               />
             </div>
           </form>
         ) : (
           <div className="profile-details">
-            <p><FaUser /> <strong>Name:</strong> {user.name}</p>
-            <p><FaEnvelope /> <strong>Email:</strong> {user.email}</p>
-            <p><FaPhone /> <strong>Phone:</strong> {user.phone}</p>
+            <p><FaUser /> <strong>Name:</strong> {userData ? `${userData.firstname} ${userData.lastname}` : 'Unknown'}</p>
+            <p><FaEnvelope /> <strong>Email:</strong> {userData? userData.email : 'Unknown'}</p>
+            <p><FaPhone /> <strong>Phone:</strong> {userData? userData.phoneno : 'Unknown'}</p>
           </div>
         )}
       </div>

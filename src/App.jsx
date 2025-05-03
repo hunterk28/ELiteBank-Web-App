@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./components/NotFound/NotFound";
 import Home from "./components/Navbar/pagesNavbar/Home";
@@ -10,6 +10,9 @@ import Login from "./components/Navbar/Modals/Login";
 import Admin from "./components/Navbar/Modals/Admin";
 import AdminDashboard from "./components/adminDashboard/Admin/AdminDashboard";
 import UserDashboard from './components/userDashboard/User/UserDashboard'
+import ResetPassword from "./components/Navbar/Modals/ResetPassword";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function AppWrapper() {
   const location = useLocation();
@@ -28,6 +31,7 @@ function AppWrapper() {
 
   return (
     <>
+      <ToastContainer />
       {!hideNavbarRoutes.includes(location.pathname) && !isNotFoundRoute && <Navbar />}
       <Routes>
         <Route path="*" element={<NotFound />} />
@@ -38,6 +42,7 @@ function AppWrapper() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/user-dashboard" element={<UserDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
@@ -47,9 +52,9 @@ function AppWrapper() {
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <AppWrapper />
-    </Router>
+    </BrowserRouter>
   );
 }
 
