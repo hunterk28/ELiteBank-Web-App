@@ -1,31 +1,39 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# ================================
+# Node.js Backend (in backend/)
+# ================================
+backend/node_modules/
+backend/.env
+backend/dist/
+backend/build/
+backend/*.log
 
-node_modules
-dist
-dist-ssr
-*.local
+# ================================
+# React Frontend (in frontend/)
+# ================================
+frontend/node_modules/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/build/
+frontend/dist/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# ================================
+# OS and Editor Junk
+# ================================
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+*.log
+*.swp
+*.swo
+*.tmp
 
-# Environment variables
+# ================================
+# Misc
+# ================================
 .env
 .env.local
-.env.development
-.env.test
-.env.production
+.vscode/
+.idea/
+*.bak
