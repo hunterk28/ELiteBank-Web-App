@@ -11,7 +11,7 @@ export default function AboutUs() {
                 <p className="about-description">
                     EliteBank is a modern banking solution designed to automate financial operations 
                     while ensuring security and efficiency. Our mission is to provide seamless banking 
-                    experiences with advanced technology.
+                    experiences with advanced technology so that we stay up to date with the world.
                 </p>
 
                 <div className="about-features">
